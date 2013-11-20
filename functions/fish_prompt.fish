@@ -30,16 +30,16 @@ function byscripts_prompt_hostname
 end
 
 function byscripts_prompt_git
+
+	set -g __fish_git_prompt_show_informative_status 1
+	set -g __fish_git_prompt_showcolorhints 1
+	set -g ___fish_git_prompt_char_stateseparator " "
 	
-	if git status >/dev/null ^&1
-		byscripts_decrease_remaining_length -2
-		set -l branch (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
-		set -l gs (git status --porcelain)
-		if [ -z "$gs" ]
-			byscripts_decorate "✓ "$branch "green" "--bold"
-		else
-			byscripts_decorate "✕ "$branch "red" "--bold"
-		end
+	set -l prompt (__fish_git_prompt "%s")
+
+	if [ -n "$prompt" ]
+		byscripts_decrease_remaining_length -18
+		byscripts_decorate $prompt
 	end
 end
 
