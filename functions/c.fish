@@ -1,3 +1,3 @@
-function c --description="Clear screen"
-	clear $argv; 
+function c --description="composer"
+	composer $argv; 
 end
