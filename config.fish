@@ -1,4 +1,5 @@
 set --export SHELL /usr/bin/fish
+set --export EDITOR "subl -w"
 set -e fish_greeting
 
 if [ -f ~/.autojump/etc/profile.d/autojump.fish ]
