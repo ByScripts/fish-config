@@ -1,9 +1,3 @@
-function gi --description 'Generate a .gitignore file from gitignore.io'
-	if count $argv > /dev/null
-		curl http://www.gitignore.io/api/$argv
-	else
-		echo "Usage: gi choice1,choice2,choiceN >> .gitignore"
-		echo ""
-		echo "To get a list of possible choices: gi list"
-	end
+function gi --description 'Alias for gitignore'
+	gitignore $argv
 end
