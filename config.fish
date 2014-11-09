@@ -6,8 +6,6 @@ if [ -f ~/.autojump/etc/profile.d/autojump.fish ]
 	source ~/.autojump/etc/profile.d/autojump.fish
 end
 
-
-
 # COMPLETION ALIASES
 make_completion i "apt-get install"
 make_completion r "apt-get remove"
@@ -22,3 +20,4 @@ make_completion ga "git add"
 make_completion gm "git merge"
 make_completion gps "git push"
 make_completion gpl "git pull"
+make_completion gi "gitignore"
