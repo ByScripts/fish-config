@@ -1,3 +1,3 @@
 function s --description="Symfony console"
-	app/console $argv; 
+	php app/console $argv; 
 end
