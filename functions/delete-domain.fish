@@ -1,5 +1,5 @@
-function delete-domain
-    set _fqdn $argv[1]
+function delete-domain --description 'Delete a domain configuration'
+	set _fqdn $argv[1]
     set _domain (echo $_fqdn | cut -f1 -d.)
     set _tld (echo $_fqdn | cut -f2 -d.)
     set _filename (echo /etc/apache2/sites-available/$_fqdn.conf)

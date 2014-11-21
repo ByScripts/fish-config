@@ -1,4 +1,4 @@
-function create-domain
+function create-domain -d "Create a new domain configuration"
 	set _fqdn $argv[1]
     set _domain (echo $_fqdn | cut -f1 -d.)
     set _tld (echo $_fqdn | cut -f2 -d.)
