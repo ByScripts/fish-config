@@ -61,6 +61,8 @@ function delete-domain --description 'Delete a domain configuration'
     end
 
     if test $_doApache = 1
+        sudo a2dissite $_fqdn > /dev/null
+        __green "Website has been deactivated"
         sudo rm $_filename
         __green "Apache config file has been deleted."
     end
@@ -78,5 +80,11 @@ function delete-domain --description 'Delete a domain configuration'
     mysql -uroot -p$_rootPassword -e "FLUSH PRIVILEGES;"
     __green "MySQL permissions have been updated."
 
-    echo
+    if test $_doApache = 1
+        if __confirm "Do you want to reload Apache config (a2reload)?"
+            a2reload > /dev/null
+            __green "Apache config has been reloaded"
+        end
+    end
+
 end
