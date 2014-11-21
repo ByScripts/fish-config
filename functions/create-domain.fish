@@ -87,6 +87,11 @@ function create-domain -d "Create a new domain configuration"
         if __confirm "Do you want to activate the website (a2ensite)?"
             sudo a2ensite $_fqdn > /dev/null
             __green "Website has been activated."
+
+            if __confirm "Do you want to reload the Apache config (a2reload)?"
+                a2reload > /dev/null
+                __green "Apache config has been reloaded."
+            end
         else
             __red "Website has not been activated."
         end
