@@ -40,15 +40,40 @@ Aliases
 Commands
 --------
 
-`gitignore` `app1 app2 ... >> .gitignore`: Create a .gitignore from www.gitignore.io, with autocompletion
+#### gitignore
 
-`php-symlink`: Remove `cli/php.ini` and `cli/php.ini`, and symlink `apache2/php.ini` instead
+`gitignore app1 app2 ... >> .gitignore`: Create a .gitignore from www.gitignore.io
+Get a list of applications with `gitignore list` or simply press TAB to get autocompletion
 
-`php-symlink-remove`: Remove symlinks and restore `php.ini`
+#### php-symlink
 
-`symfo-acl` : Create `app/cache` and `app/log` if not exist, then set ACL to `www-data` and current user.
+Remove `cli/php.ini` and `cgi/php.ini`, and symlink `apache2/php.ini` instead
 
-`add_to_path` `/foo/bar.bin` : Add the path to Fish user PATH
+#### php-symlink-remove
+
+Remove the symlinks and copy `apache2/php.ini` back to `cli/php.ini` and `cgi/php.ini`
+
+#### symfo-acl
+
+Set correct ACL for a Symfony app.
+Create `app/cache` and `app/log` if not exist, then set ACL to `www-data` and current user.
+
+#### add_to_path
+
+`add_to_path /foo/bar/bin` : Append the `/foo/bar/bin` path to Fish user PATH
+
+#### create-domain
+
+`create-domain foobar.tld` :
+
+ * Create a `foobar.tld.conf` Apache file pointing to `/var/www/foobar.tld`
+ * Create a `foobar-tld` MySQL database
+ * Create a `foobar-tld` MySQL user
+ * Grant all access on created database to created user
+
+#### delete-domain
+
+`delete-domain foobar.tld` : Reverse the process. Delete MySQL user, database and Apache config.
 
 Prompt
 ------
