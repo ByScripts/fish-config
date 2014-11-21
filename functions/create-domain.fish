@@ -82,4 +82,13 @@ function create-domain -d "Create a new domain configuration"
     __green "User's permissions on database have been updated."
 
     echo
+
+    if test $_doApache = 1
+        if __confirm "Do you want to activate the website (a2ensite)?"
+            sudo a2ensite $_fqdn > /dev/null
+            __green "Website has been activated."
+        else
+            __red "Website has not been activated."
+        end
+    end
 end
