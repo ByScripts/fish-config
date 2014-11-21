@@ -1,11 +1,11 @@
-function __confirm
-	while read -p 'echo "[Y]es or [N]o > "' -l _userChoice
-        if echo "$_userChoice" | grep -q -E '^[nN]'
-            return 1
-        end
-
-        if echo "$_userChoice" | grep -q -E '^[yY]'
-            return 0
-        end
-    end
+function __confirm -d "Ask the user a confirmation"
+	while true
+	    set confirmation (__ask $argv "[Yn]")
+		switch $confirmation
+			case '' y Y
+				return 0
+			case n N
+				return 1
+		end
+	end
 end

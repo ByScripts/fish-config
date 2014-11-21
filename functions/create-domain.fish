@@ -54,9 +54,8 @@ function create-domain -d "Create a new domain configuration"
     end
 
     echo
-    echo "Continue?"
 
-    if not __confirm
+    if not __confirm "Continue?"
         echo
         __green "Aborted."
         return
