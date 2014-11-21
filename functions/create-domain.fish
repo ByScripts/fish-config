@@ -96,4 +96,10 @@ function create-domain -d "Create a new domain configuration"
             __red "Website has not been activated."
         end
     end
+
+    if not grep -q "$_fqdn" /etc/hosts
+        if __confirm "Do you want to add $_fqdn to you hosts file?"
+            add_to_hosts "$_fqdn"
+        end
+    end
 end
