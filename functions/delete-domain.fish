@@ -47,7 +47,7 @@ function delete-domain --description 'Delete a domain configuration'
 
     if test $_doSomething = 0
         echo
-        _red "Nothing to do. Abort."
+        __red "Nothing to do. Abort."
         echo
         return
     end
