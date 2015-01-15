@@ -1,4 +1,6 @@
 function __ask --description "Ask the user a question"
-	read -l -p "set_color green; echo -n '$argv'; set_color normal; echo '> ';" tmp
+    set -q argv[1]; and set -l question $argv[1]
+    set -q argv[2]; and set -l default_value $argv[2]
+	read -l -c "$default_value" -p "set_color green; echo -n '$question'; set_color normal; echo '> ';" tmp
 	echo $tmp
 end
