@@ -10,12 +10,16 @@ function create-domain -d "Create a new domain configuration"
     set _doApache 0
     set _doDatabase 0
     set _doDatabaseUser 0
+    set _doMySql 0
 
-    __blue -n "Enter you MySQL root password: "
-    stty -echo
-    head -n 1 | read -l _rootPassword
-    stty echo
-    echo
+    if __confirm "Utiliser MySQL"
+        set _doMySql 1
+        __blue -n "Enter you MySQL root password: "
+        stty -echo
+        head -n 1 | read -l _rootPassword
+        stty echo
+        echo
+    end
 
     if test -e $_filename
         echo
@@ -28,29 +32,31 @@ function create-domain -d "Create a new domain configuration"
         set _doSomething 1
     end
 
-    if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.db WHERE Db = '$_database')" | grep -q -E '1'
-        echo
-        echo (__blue -n "> WARNING")": Database "(__green -n $_database)" already exists. This step will be skipped."
-    else
-        echo
-        echo "> Database will be created: "(__green -n $_database)
-        set _doDatabase 1
-        set _doSomething 1
-    end
+    if test $_doMySql = 1
+        if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.db WHERE Db = '$_database')" | grep -q -E '1'
+            echo
+            echo (__blue -n "> WARNING")": Database "(__green -n $_database)" already exists. This step will be skipped."
+        else
+            echo
+            echo "> Database will be created: "(__green -n $_database)
+            set _doDatabase 1
+            set _doSomething 1
+        end
 
-    if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = '$_database')" | grep -q -E '1'
-        echo
-        echo (__blue -n "> WARNING")": Database user "(__green -n $_database)" already exists. This step will be skipped."
-    else
-        echo
-        echo "> Database user will be created: "(__green -n $_database)
-        set _doDatabaseUser 1
-        set _doSomething 1
+        if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = '$_database')" | grep -q -E '1'
+            echo
+            echo (__blue -n "> WARNING")": Database user "(__green -n $_database)" already exists. This step will be skipped."
+        else
+            echo
+            echo "> Database user will be created: "(__green -n $_database)
+            set _doDatabaseUser 1
+            set _doSomething 1
+        end
     end
 
     if test $_doSomething = 0
         echo
-        _red "Nothing to do. Abort."
+        __red "Nothing to do. Abort."
         echo
         return
     end
@@ -71,20 +77,22 @@ function create-domain -d "Create a new domain configuration"
         __green "Apache config file has been created."
     end
 
-    if test $_doDatabaseUser = 1
-        mysql -uroot -p$_rootPassword -e "CREATE USER '$_database'@'localhost' IDENTIFIED BY '$_password';"
-        __green "Database user has been created with password: "(__blue -n $_password)
+    if test $_doMySql = 1
+        if test $_doDatabaseUser = 1
+            mysql -uroot -p$_rootPassword -e "CREATE USER '$_database'@'localhost' IDENTIFIED BY '$_password';"
+            __green "Database user has been created with password: "(__blue -n $_password)
+        end
+
+        if test $_doDatabase = 1
+            mysql -uroot -p$_rootPassword -e "CREATE DATABASE IF NOT EXISTS `$_database`;"
+            __green "Database has been created."
+        end
+
+        mysql -uroot -p$_rootPassword -e "GRANT ALL ON `$_database`.* TO '$_database'@'localhost';FLUSH PRIVILEGES;"
+        __green "User's permissions on database have been updated."
+
+        echo
     end
-
-    if test $_doDatabase = 1
-        mysql -uroot -p$_rootPassword -e "CREATE DATABASE IF NOT EXISTS `$_database`;"
-        __green "Database has been created."
-    end
-
-    mysql -uroot -p$_rootPassword -e "GRANT ALL ON `$_database`.* TO '$_database'@'localhost';FLUSH PRIVILEGES;"
-    __green "User's permissions on database have been updated."
-
-    echo
 
     if test $_doApache = 1
         if __confirm "Do you want to activate the website (a2ensite)?"
