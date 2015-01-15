@@ -1,6 +1,7 @@
 function create-domain -d "Create a new domain configuration"
 	set _fqdn $argv[1]
     set _domain (echo $_fqdn | cut -f1 -d.)
+    set _documentRoot "/var/www/$_fqdn"
     set _tld (echo $_fqdn | cut -f2 -d.)
     set _filename (echo /etc/apache2/sites-available/$_fqdn.conf)
     set _database (echo $_fqdn | sed "s/\\./-/g" | sed "s/[^a-z0-9-]//g")
@@ -22,6 +23,7 @@ function create-domain -d "Create a new domain configuration"
     else
         echo
         echo "> Apache config file will be created: "(__green -n $_filename)
+        set _documentRoot (__ask "Document root" "$_documentRoot")
         set _doApache 1
         set _doSomething 1
     end
@@ -63,6 +65,7 @@ function create-domain -d "Create a new domain configuration"
 
     if test $_doApache = 1
         sudo cp $HOME/.config/fish/apache-skeleton.conf $_filename
+        sudo sed -i "s#_DOCUMENT_ROOT_#$_documentRoot#g" $_filename
         sudo sed -i "s/_DOMAIN_/$_domain/g" $_filename
         sudo sed -i "s/_TLD_/$_tld/g" $_filename
         __green "Apache config file has been created."
