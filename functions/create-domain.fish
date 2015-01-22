@@ -12,11 +12,12 @@ function create-domain -d "Create a new domain configuration"
     set _doDatabaseUser 0
     set _doMySql 0
 
-    if __confirm "Utiliser MySQL"
+    if __confirm "Configure MySQL user/database?"
         set _doMySql 1
         __blue -n "Enter you MySQL root password: "
         stty -echo
-        head -n 1 | read -l _rootPassword
+        head -n 1 | read -l _tmpPassword
+        set _rootPassword $_tmpPassword
         stty echo
         echo
     end
