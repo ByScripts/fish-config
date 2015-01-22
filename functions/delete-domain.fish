@@ -8,12 +8,17 @@ function delete-domain --description 'Delete a domain configuration'
     set _doApache 0
     set _doDatabase 0
     set _doDatabaseUser 0
+    set _doMySql 0
 
-    __blue -n "Enter you MySQL root password: "
-    stty -echo
-    head -n 1 | read -l _rootPassword
-    stty echo
-    echo
+    if __confirm "Drop MySQL user/database?"
+        set _doMySql 1
+        __blue -n "Enter you MySQL root password: "
+        stty -echo
+        head -n 1 | read -l _tmpPassword
+        set _rootPassword $_tmpPassword
+        stty echo
+        echo
+    end
 
     if test -e $_filename
         echo
@@ -25,24 +30,26 @@ function delete-domain --description 'Delete a domain configuration'
         echo (__blue -n "> WARNING")": Apache config file "(__green -n $_filename)" does not exists. This step will be skipped."
     end
 
-    if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.db WHERE Db = '$_database')" | grep -q -E '1'
-        echo
-        echo "> Database will be deleted: "(__green -n $_database)
-        set _doDatabase 1
-        set _doSomething 1
-    else
-        echo
-        echo (__blue -n "> WARNING")": Database "(__green -n $_database)" does not exists. This step will be skipped."
-    end
+    if test $_doMySql = 1
+        if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.db WHERE Db = '$_database')" | grep -q -E '1'
+            echo
+            echo "> Database will be deleted: "(__green -n $_database)
+            set _doDatabase 1
+            set _doSomething 1
+        else
+            echo
+            echo (__blue -n "> WARNING")": Database "(__green -n $_database)" does not exists. This step will be skipped."
+        end
 
-    if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = '$_database')" | grep -q -E '1'
-        echo
-        echo "> Database user will be deleted: "(__green -n $_database)
-        set _doDatabaseUser 1
-        set _doSomething 1
-    else
-        echo
-        echo (__blue -n "> WARNING")": Database user "(__green -n $_database)" does not exists. This step will be skipped."
+        if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = '$_database')" | grep -q -E '1'
+            echo
+            echo "> Database user will be deleted: "(__green -n $_database)
+            set _doDatabaseUser 1
+            set _doSomething 1
+        else
+            echo
+            echo (__blue -n "> WARNING")": Database user "(__green -n $_database)" does not exists. This step will be skipped."
+        end
     end
 
     if test $_doSomething = 0
@@ -67,18 +74,20 @@ function delete-domain --description 'Delete a domain configuration'
         __green "Apache config file has been deleted."
     end
 
-    if test $_doDatabaseUser = 1
-        mysql -uroot -p$_rootPassword -e "DROP USER '$_database'@'localhost';"
-        __green "Database user has been deleted."
-    end
+    if test $_doMySql = 1
+        if test $_doDatabaseUser = 1
+            mysql -uroot -p$_rootPassword -e "DROP USER '$_database'@'localhost';"
+            __green "Database user has been deleted."
+        end
 
-    if test $_doDatabase = 1
-        mysql -uroot -p$_rootPassword -e "DROP DATABASE IF EXISTS `$_database`;"
-        __green "Database has been deleted."
-    end
+        if test $_doDatabase = 1
+            mysql -uroot -p$_rootPassword -e "DROP DATABASE IF EXISTS `$_database`;"
+            __green "Database has been deleted."
+        end
 
-    mysql -uroot -p$_rootPassword -e "FLUSH PRIVILEGES;"
-    __green "MySQL permissions have been updated."
+        mysql -uroot -p$_rootPassword -e "FLUSH PRIVILEGES;"
+        __green "MySQL permissions have been updated."
+    end
 
     if test $_doApache = 1
         if __confirm "Do you want to reload Apache config (a2reload)?"
@@ -86,5 +95,4 @@ function delete-domain --description 'Delete a domain configuration'
             __green "Apache config has been reloaded"
         end
     end
-
 end
