@@ -1,7 +1,7 @@
 function create-domain -d "Create a new domain configuration"
 	set _fqdn $argv[1]
     set _domain (echo $_fqdn | cut -f1 -d.)
-    set _documentRoot "/var/www/$_fqdn"
+    set _documentRoot "/var/www/$_fqdn/web"
     set _tld (echo $_fqdn | cut -f2 -d.)
     set _filename (echo /etc/apache2/sites-available/$_fqdn.conf)
     set _database (echo $_fqdn | sed "s/\\./-/g" | sed "s/[^a-z0-9-]//g")
