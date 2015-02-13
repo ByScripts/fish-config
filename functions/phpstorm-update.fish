@@ -5,14 +5,6 @@ function phpstorm-update -a url
         return
     end
 
-
-    if test -d "$HOME/Applications/PhpStorm"
-        set -l TODAY (date +"%Y-%m-%d-%H-%M")
-        mv "$HOME/Applications/PhpStorm" "$HOME/Applications/PhpStorm-$TODAY"
-    end
-
-    mkdir -p "$HOME/Applications/PhpStorm"
-
     echo -n "Downloading $url... "
     set -l STORM_FILENAME (basename "$url")
 
@@ -21,8 +13,14 @@ function phpstorm-update -a url
     echo -ne "\b\b\b\b"
     __green "OK"
 
+    if test -d "$HOME/Applications/PhpStorm"
+        set -l TODAY (date +"%Y-%m-%d-%H-%M")
+        mv "$HOME/Applications/PhpStorm" "$HOME/Applications/PhpStorm-$TODAY"
+    end
+
+    mkdir -p "$HOME/Applications/PhpStorm"
+
     echo -n "Extracting $STORM_FILENAME... "
     tar --strip-components=1 -C "$HOME/Applications/PhpStorm" -xzf "/tmp/$STORM_FILENAME"
     __green "OK"
-
 end
