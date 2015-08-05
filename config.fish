@@ -4,5 +4,6 @@ set -e fish_greeting
 
 if [ -f ~/.autojump/share/autojump/autojump.fish ]
 	source ~/.autojump/share/autojump/autojump.fish
+end
 
 source abbreviations.fish
