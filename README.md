@@ -6,36 +6,43 @@ Fish Shell configuration files
 Aliases
 -------
 
-| Alias     | Command                      |
-|----------:|------------------------------|
-| a2reload  | sudo service apache2 reload  |
+[//] # (aliases)
+
+| Alias | Command |
+|------:|---------|
+| a | php artisan |
+| a2reload | sudo service apache2 reload |
 | a2restart | sudo service apache2 restart |
-| a         | php artisan (Laravel)        |
-| s         | php app/console (Symfony)    |
-| c         | composer                     |
-| ci        | composer install             |
-| cr        | composer require             |
-| csu       | composer self-update         |
-| cu        | composer update              |
-| cv        | composer validate            |
-| ar        | sudo apt-get autoremove      |
-| i         | sudo apt-get install         |
-| u         | sudo apt-get update          |
-| r         | sudo apt-get remove          |
-| ug        | sudo apt-get upgrade         |
-| dug       | sudo apt-get dist-upgrade    |
-| l         | ls                           |
-| g         | git                          |
-| ga        | git add                      |
-| ga.       | git add .                    |
-| gcm       | git commit -m                |
-| gco       | git checkout                 |
-| gm        | git merge                    |
-| gpl       | git pull                     |
-| gps       | git push                     |
-| gs        | git status                   |
-| gi        | gitignore (See below)        |
-| psg       | ps -ef \| grep               |
+| c | composer |
+| ci | composer install |
+| cr | composer require |
+| csu | sudo composer self-update |
+| cu | composer update |
+| cv | composer validate |
+| ar | sudo apt-get autoremove |
+| dug | sudo apt-get dist-upgrade |
+| i | sudo apt-get install |
+| r | sudo apt-get remove |
+| u | sudo apt-get update |
+| ug | sudo apt-get upgrade |
+| s | php app/console |
+| l | ls |
+| g | git |
+| ga. | git add . |
+| ga | git add |
+| gcm | git commit -m |
+| gco | git checkout |
+| gi | gitignore |
+| gm | git merge |
+| gpl | git pull |
+| gps | git push |
+| gs | git status |
+| gc | git clone |
+| psg | ps -ef \| grep |
+| add_to_path | set -U fish_user_paths $fish_user_paths |
+| freebox_mount | sudo mount -t cifs //mafreebox.freebox.fr/Disque\ dur /media/freebox -o user=freebox,uid=1000,gid=1000,rw,password= |
+
+[//] # (/aliases)
 
 Commands
 --------
