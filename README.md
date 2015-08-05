@@ -6,7 +6,7 @@ Fish Shell configuration files
 Aliases
 -------
 
-[//] # (aliases)
+[//]: # (aliases)
 
 | Alias | Command |
 |------:|---------|
@@ -42,7 +42,7 @@ Aliases
 | add_to_path | set -U fish_user_paths $fish_user_paths |
 | freebox_mount | sudo mount -t cifs //mafreebox.freebox.fr/Disque\ dur /media/freebox -o user=freebox,uid=1000,gid=1000,rw,password= |
 
-[//] # (/aliases)
+[//]: # (/aliases)
 
 Commands
 --------

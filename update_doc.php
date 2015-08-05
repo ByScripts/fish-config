@@ -2,8 +2,8 @@
 
 $content = file_get_contents(__DIR__ . '/abbreviations.fish');
 
-$startTag = '[//] # (aliases)';
-$endTag = '[//] # (/aliases)';
+$startTag = '[//]: # (aliases)';
+$endTag = '[//]: # (/aliases)';
 
 $markdownLines = [
     $startTag,
