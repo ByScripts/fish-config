@@ -1,3 +1,11 @@
+#doc
+# `phpstorm-update <url>`:
+#
+#  * Copy the current `~/Applications/PhpStorm` to `~/Applications/PhpStorm-{timestamp}`
+#  * Download PhpStorm from `<url>`
+#  * Extract archive to `~/Applications/PhpStorm`
+#enddoc
+
 function phpstorm-update -a url
 
     if test -z $url

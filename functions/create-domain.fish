@@ -1,3 +1,12 @@
+#doc
+# `create-domain foobar.tld` :
+#
+#  * Create a `foobar.tld.conf` Apache file pointing to `/var/www/foobar.tld`
+#  * Create a `foobar-tld` MySQL database
+#  * Create a `foobar-tld` MySQL user
+#  * Grant all access on created database to created user
+#enddoc
+
 function create-domain -d "Create a new domain configuration"
 	set _fqdn $argv[1]
     set _domain (echo $_fqdn | cut -f1 -d.)

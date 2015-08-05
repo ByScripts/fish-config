@@ -1,3 +1,7 @@
+#doc
+# `delete-domain foobar.tld` : Reverse the `create-domain` process. Delete MySQL user, database and Apache config.
+#enddoc
+
 function delete-domain --description 'Delete a domain configuration'
 	set _fqdn $argv[1]
     set _domain (echo $_fqdn | cut -f1 -d.)

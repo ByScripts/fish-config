@@ -1,3 +1,11 @@
+#doc
+# `mongochef-update <url>`:
+#
+#  * Copy the current `~/Applications/MongoChef` to `~/Applications/MongoChef-{timestamp}`
+#  * Download MongoChef from `<url>`
+#  * Extract archive to `~/Applications/MongoChef`
+#enddoc
+
 function mongochef-update -a url
 
     if test -z $url

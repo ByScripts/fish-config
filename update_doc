@@ -1,34 +1,104 @@
 #!/usr/bin/env php
 <?php
 
-$content = file_get_contents(__DIR__ . '/abbreviations.fish');
+$readmeFilePath = __DIR__ . '/README.md';
+$readmeContent = file_get_contents($readmeFilePath);
 
-$startTag = '[//]: # (aliases)';
-$endTag = '[//]: # (/aliases)';
+/**
+ * PARSE ABBREVIATIONS
+ */
+$commandGroups = [];
 
-$markdownLines = [
-    $startTag,
-    '',
-    '| Alias | Command |',
-    '|------:|---------|'
-];
+$currentGroupIndex = 'Other';
 
-function escapePipe($string)
-{
-    return str_replace('|', '\\|', $string);
-}
+foreach (file(__DIR__ . '/abbreviations.fish') as $line) {
 
-if (preg_match_all('`^abbr\s+(?P<abbreviation>[^\s]+)\s+(?P<command>.*)$`m', $content, $lines, PREG_SET_ORDER)) {
-    foreach ($lines as $line) {
-        $markdownLines[] = sprintf('| %s | %s |', escapePipe($line['abbreviation']), escapePipe($line['command']));
+    $line = trim($line);
+
+    if (empty($line)) {
+        continue;
+    }
+
+    if (0 === strpos($line, '#')) {
+        $currentGroupIndex = trim(substr($line, 1));
+    } elseif (0 === strpos($line, 'abbr ')) {
+        list($void, $abbr, $command) = explode(' ', $line, 3);
+        $commandGroups[$currentGroupIndex][$abbr] = str_replace('|', '\\|', $command);
     }
 }
 
-$markdownLines[] = '';
-$markdownLines[] = $endTag;
+$lines = [];
 
-$regex = sprintf('`^%s.*%s$`sm', preg_quote($startTag), preg_quote($endTag));
+foreach ($commandGroups as $groupLabel => $commands) {
 
-$markdown = implode("\n", $markdownLines);
+    $line = [
+        '    <thead><tr><th colspan="2" align="left">' . $groupLabel . '</th></tr></thead>',
+        '    <tbody>'
+    ];
+    foreach ($commands as $abbr => $command) {
+        $line[] = '        <tr><th align="right">' . $abbr . '</th><td>' . $command . '</td></tr>';
+    }
+    $line[] = '    </tbody>';
 
-file_put_contents(__DIR__ . '/README.md', preg_replace($regex, $markdown, file_get_contents(__DIR__ . '/README.md')));
+    $lines[] = implode("\n", $line);
+}
+
+$startTag = '[//]: # (abbreviations)';
+$endTag = '[//]: # (/abbreviations)';
+
+$output = $startTag . "\n\n";
+$output .= '<table>' . "\n";
+$output .= implode("\n    <tr><td colspan=\"2\"></td></tr>\n", $lines);
+$output .= "\n" . '</table>';
+$output .= "\n\n" . $endTag;
+
+$readmeContent = preg_replace(
+    sprintf('`^%s.*%s$`sm', preg_quote($startTag), preg_quote($endTag)),
+    $output,
+    $readmeContent
+);
+
+/**
+ * PARSE COMMANDS
+ */
+
+$lines = [];
+
+foreach (scandir(__DIR__ . '/functions') as $fileName) {
+
+    $filePath = __DIR__ . '/functions/' . $fileName;
+
+    if (!is_file($filePath)) {
+        continue;
+    }
+
+    $fileContent = file_get_contents($filePath);
+
+    if (!preg_match('`^#doc(.*)#enddoc$`ms', $fileContent, $match)) {
+        continue;
+    }
+
+    $lines[] = '';
+    $lines[] = '#### ' . basename($fileName, '.fish');
+    $lines[] = '';
+    $lines[] = preg_replace('`^# ?`m', '', trim($match[1]));
+}
+
+$startTag = '[//]: # (commands)';
+$endTag = '[//]: # (/commands)';
+
+array_unshift($lines, $startTag);
+array_push($lines, '', $endTag);
+
+$readmeContent = preg_replace(
+    sprintf('`^%s.*%s$`sm', preg_quote($startTag), preg_quote($endTag)),
+    implode("\n", $lines),
+    $readmeContent
+);
+
+/**
+ * WRITE NEW README
+ */
+
+
+file_put_contents($readmeFilePath, $readmeContent);

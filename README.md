@@ -3,72 +3,91 @@ fish-config
 
 Fish Shell configuration files
 
-Aliases
--------
+Abbreviations
+-------------
 
-[//]: # (aliases)
+[//]: # (abbreviations)
 
-| Alias | Command |
-|------:|---------|
-| a | php artisan |
-| a2reload | sudo service apache2 reload |
-| a2restart | sudo service apache2 restart |
-| c | composer |
-| ci | composer install |
-| cr | composer require |
-| csu | sudo composer self-update |
-| cu | composer update |
-| cv | composer validate |
-| ar | sudo apt-get autoremove |
-| dug | sudo apt-get dist-upgrade |
-| i | sudo apt-get install |
-| r | sudo apt-get remove |
-| u | sudo apt-get update |
-| ug | sudo apt-get upgrade |
-| s | php app/console |
-| l | ls |
-| g | git |
-| ga. | git add . |
-| ga | git add |
-| gcm | git commit -m |
-| gco | git checkout |
-| gi | gitignore |
-| gm | git merge |
-| gpl | git pull |
-| gps | git push |
-| gs | git status |
-| gc | git clone |
-| gd | git diff |
-| psg | ps -ef \| grep |
-| add_to_path | set -U fish_user_paths $fish_user_paths |
-| freebox_mount | sudo mount -t cifs //mafreebox.freebox.fr/Disque\ dur /media/freebox -o user=freebox,uid=1000,gid=1000,rw,password= |
+<table>
+    <thead><tr><th colspan="2" align="left">Artisan</th></tr></thead>
+    <tbody>
+        <tr><th align="right">a</th><td>php artisan</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Apache</th></tr></thead>
+    <tbody>
+        <tr><th align="right">a2reload</th><td>sudo service apache2 reload</td></tr>
+        <tr><th align="right">a2restart</th><td>sudo service apache2 restart</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Composer</th></tr></thead>
+    <tbody>
+        <tr><th align="right">c</th><td>composer</td></tr>
+        <tr><th align="right">ci</th><td>composer install</td></tr>
+        <tr><th align="right">cr</th><td>composer require</td></tr>
+        <tr><th align="right">csu</th><td>sudo composer self-update</td></tr>
+        <tr><th align="right">cu</th><td>composer update</td></tr>
+        <tr><th align="right">cv</th><td>composer validate</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Apt-Get</th></tr></thead>
+    <tbody>
+        <tr><th align="right">ar</th><td>sudo apt-get autoremove</td></tr>
+        <tr><th align="right">dug</th><td>sudo apt-get dist-upgrade</td></tr>
+        <tr><th align="right">i</th><td>sudo apt-get install</td></tr>
+        <tr><th align="right">r</th><td>sudo apt-get remove</td></tr>
+        <tr><th align="right">u</th><td>sudo apt-get update</td></tr>
+        <tr><th align="right">ug</th><td>sudo apt-get upgrade</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Symfony</th></tr></thead>
+    <tbody>
+        <tr><th align="right">s</th><td>php app/console</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">LS</th></tr></thead>
+    <tbody>
+        <tr><th align="right">l</th><td>ls</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Git</th></tr></thead>
+    <tbody>
+        <tr><th align="right">g</th><td>git</td></tr>
+        <tr><th align="right">ga.</th><td>git add .</td></tr>
+        <tr><th align="right">ga</th><td>git add</td></tr>
+        <tr><th align="right">gcm</th><td>git commit -m</td></tr>
+        <tr><th align="right">gco</th><td>git checkout</td></tr>
+        <tr><th align="right">gi</th><td>gitignore</td></tr>
+        <tr><th align="right">gm</th><td>git merge</td></tr>
+        <tr><th align="right">gpl</th><td>git pull</td></tr>
+        <tr><th align="right">gps</th><td>git push</td></tr>
+        <tr><th align="right">gs</th><td>git status</td></tr>
+        <tr><th align="right">gc</th><td>git clone</td></tr>
+        <tr><th align="right">gd</th><td>git diff</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">PS</th></tr></thead>
+    <tbody>
+        <tr><th align="right">psg</th><td>ps -ef \| grep</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Other</th></tr></thead>
+    <tbody>
+        <tr><th align="right">add_to_path</th><td>set -U fish_user_paths $fish_user_paths</td></tr>
+        <tr><th align="right">freebox_mount</th><td>sudo mount -t cifs //mafreebox.freebox.fr/Disque\ dur /media/freebox -o user=freebox,uid=1000,gid=1000,rw,password=</td></tr>
+    </tbody>
+</table>
 
-[//]: # (/aliases)
+[//]: # (/abbreviations)
 
 Commands
 --------
 
-#### gitignore
+[//]: # (commands)
 
-`gitignore app1 app2 ... >> .gitignore`: Create a .gitignore from www.gitignore.io
-Get a list of applications with `gitignore list` or simply press TAB to get autocompletion
+#### add_to_hosts
 
-#### php-symlink
-
-Remove `cli/php.ini` and `cgi/php.ini`, and symlink `apache2/php.ini` instead
-
-#### php-symlink-remove
-
-Remove the symlinks and copy `apache2/php.ini` back to `cli/php.ini` and `cgi/php.ini`
-
-#### symfo-acl
-
-Set correct ACL for a Symfony app.
-Create `app/cache` and `app/log` if not exist, then set ACL to `www-data` and current user.
-
-#### add_to_path
-
-`add_to_path /foo/bar/bin` : Append the `/foo/bar/bin` path to Fish user PATH
+`add_to_hosts <hostname>`: Ask for an IP address (defaults to 127.0.0.1) and add `hostname` to /etc/hosts file.
 
 #### create-domain
 
@@ -81,7 +100,43 @@ Create `app/cache` and `app/log` if not exist, then set ACL to `www-data` and cu
 
 #### delete-domain
 
-`delete-domain foobar.tld` : Reverse the process. Delete MySQL user, database and Apache config.
+`delete-domain foobar.tld` : Reverse the `create-domain` process. Delete MySQL user, database and Apache config.
+
+#### gitignore
+
+`gitignore app1 app2 ... >> .gitignore`: Create a .gitignore from www.gitignore.io
+Get a list of applications with `gitignore list` or simply press TAB to get autocompletion
+
+#### mongochef-update
+
+`mongochef-update <url>`:
+
+ * Copy the current `~/Applications/MongoChef` to `~/Applications/MongoChef-{timestamp}`
+ * Download MongoChef from `<url>`
+ * Extract archive to `~/Applications/MongoChef`
+
+#### php-symlink-remove
+
+Remove the symlinks and copy `apache2/php.ini` back to `cli/php.ini` and `cgi/php.ini`
+
+#### php-symlink
+
+Remove `cli/php.ini` and `cgi/php.ini`, and symlink `apache2/php.ini` instead
+
+#### phpstorm-update
+
+`phpstorm-update <url>`:
+
+ * Copy the current `~/Applications/PhpStorm` to `~/Applications/PhpStorm-{timestamp}`
+ * Download PhpStorm from `<url>`
+ * Extract archive to `~/Applications/PhpStorm`
+
+#### symfo-acl
+
+Set correct ACL for a Symfony app.
+Create `app/cache` and `app/log` if not exist, then set ACL to `www-data` and current user.
+
+[//]: # (/commands)
 
 Prompt
 ------
