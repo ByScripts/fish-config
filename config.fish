@@ -40,6 +40,7 @@ abbr gm git merge
 abbr gpl git pull
 abbr gps git push
 abbr gs git status
+abbr gc git clone
 
 abbr psg ps -ef | grep
 
