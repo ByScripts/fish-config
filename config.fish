@@ -2,8 +2,8 @@ set --export SHELL /usr/bin/fish
 set --export EDITOR "subl -w"
 set -e fish_greeting
 
-if [ -f ~/.autojump/etc/profile.d/autojump.fish ]
-	source ~/.autojump/etc/profile.d/autojump.fish
+if [ -f ~/.autojump/share/autojump/autojump.fish ]
+	source ~/.autojump/share/autojump/autojump.fish
 end
 
 # COMPLETION ALIASES
