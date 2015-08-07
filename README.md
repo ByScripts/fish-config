@@ -9,25 +9,15 @@ Abbreviations
 [//]: # (abbreviations)
 
 <table>
-    <thead><tr><th colspan="2" align="left">Artisan</th></tr></thead>
-    <tbody>
-        <tr><th align="right">a</th><td>php artisan</td></tr>
-    </tbody>
-    <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Apache</th></tr></thead>
     <tbody>
         <tr><th align="right">a2reload</th><td>sudo service apache2 reload</td></tr>
         <tr><th align="right">a2restart</th><td>sudo service apache2 restart</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">Composer</th></tr></thead>
+    <thead><tr><th colspan="2" align="left">Artisan</th></tr></thead>
     <tbody>
-        <tr><th align="right">c</th><td>composer</td></tr>
-        <tr><th align="right">ci</th><td>composer install</td></tr>
-        <tr><th align="right">cr</th><td>composer require</td></tr>
-        <tr><th align="right">csu</th><td>sudo composer self-update</td></tr>
-        <tr><th align="right">cu</th><td>composer update</td></tr>
-        <tr><th align="right">cv</th><td>composer validate</td></tr>
+        <tr><th align="right">a</th><td>php artisan</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Apt-Get</th></tr></thead>
@@ -40,14 +30,14 @@ Abbreviations
         <tr><th align="right">ug</th><td>sudo apt-get upgrade</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">Symfony</th></tr></thead>
+    <thead><tr><th colspan="2" align="left">Composer</th></tr></thead>
     <tbody>
-        <tr><th align="right">s</th><td>php app/console</td></tr>
-    </tbody>
-    <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">LS</th></tr></thead>
-    <tbody>
-        <tr><th align="right">l</th><td>ls</td></tr>
+        <tr><th align="right">c</th><td>composer</td></tr>
+        <tr><th align="right">ci</th><td>composer install</td></tr>
+        <tr><th align="right">cr</th><td>composer require</td></tr>
+        <tr><th align="right">csu</th><td>sudo composer self-update</td></tr>
+        <tr><th align="right">cu</th><td>composer update</td></tr>
+        <tr><th align="right">cv</th><td>composer validate</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Git</th></tr></thead>
@@ -66,9 +56,36 @@ Abbreviations
         <tr><th align="right">gd</th><td>git diff</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">PS</th></tr></thead>
+    <thead><tr><th colspan="2" align="left">LS</th></tr></thead>
     <tbody>
-        <tr><th align="right">psg</th><td>ps -ef \| grep</td></tr>
+        <tr><th align="right">l</th><td>ls</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">NPM</th></tr></thead>
+    <tbody>
+        <tr><th align="right">ni</th><td>npm install --save-dev</td></tr>
+        <tr><th align="right">np</th><td>npm prune</td></tr>
+        <tr><th align="right">nl</th><td>npm list</td></tr>
+        <tr><th align="right">nr</th><td>npm remove</td></tr>
+        <tr><th align="right">nu</th><td>npm update</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">PGREP</th></tr></thead>
+    <tbody>
+        <tr><th align="right">pg</th><td>pgrep -l</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Symfony</th></tr></thead>
+    <tbody>
+        <tr><th align="right">s</th><td>php app/console</td></tr>
+        <tr><th align="right">scc</th><td>php app/console cache:clear</td></tr>
+        <tr><th align="right">sgb</th><td>php app/console generate:bundle</td></tr>
+        <tr><th align="right">sgc</th><td>php app/console generate:controller</td></tr>
+        <tr><th align="right">sdge</th><td>php app/console doctrine:generate:entity</td></tr>
+        <tr><th align="right">sdsc</th><td>php app/console doctrine:schema:create</td></tr>
+        <tr><th align="right">sdsu</th><td>php app/console doctrine:schema:update</td></tr>
+        <tr><th align="right">sdsv</th><td>php app/console doctrine:schema:validate</td></tr>
+        <tr><th align="right">sddc</th><td>php app/console doctrine:database:create</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Other</th></tr></thead>

@@ -36,7 +36,7 @@ foreach ($commandGroups as $groupLabel => $commands) {
         '    <tbody>'
     ];
     foreach ($commands as $abbr => $command) {
-        $line[] = '        <tr><th align="right">' . $abbr . '</th><td>' . $command . '</td></tr>';
+        $line[] = '        <tr><th align="right">' . $abbr . '</th><td>' . trim($command, '\'') . '</td></tr>';
     }
     $line[] = '    </tbody>';
 
