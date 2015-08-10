@@ -40,6 +40,7 @@ abbr l 'ls'
 
 # NPM
 abbr ni 'npm install --save-dev'
+abbr nig 'npm install -g'
 abbr np 'npm prune'
 abbr nl 'npm list'
 abbr nr 'npm remove'

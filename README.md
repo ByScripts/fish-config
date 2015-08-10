@@ -64,6 +64,7 @@ Abbreviations
     <thead><tr><th colspan="2" align="left">NPM</th></tr></thead>
     <tbody>
         <tr><th align="right">ni</th><td>npm install --save-dev</td></tr>
+        <tr><th align="right">nig</th><td>npm install -g</td></tr>
         <tr><th align="right">np</th><td>npm prune</td></tr>
         <tr><th align="right">nl</th><td>npm list</td></tr>
         <tr><th align="right">nr</th><td>npm remove</td></tr>
