@@ -2,6 +2,8 @@
 # `__byscripts_spinner $pid`: Display a spinner while the process with PID `$pid` is running
 #enddoc
 
+# Inspired by: http://fitnr.com/showing-a-bash-spinner.html
+
 function __byscripts_spinner --description 'Display a spinner while a process is running' --argument pid
     set -l delay 0.5
     set -l spinstr \| \/ \- \\
