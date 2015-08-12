@@ -103,6 +103,10 @@ Commands
 
 [//]: # (commands)
 
+#### __byscripts_spinner
+
+`__byscripts_spinner $pid`: Display a spinner while the process with PID `$pid` is running
+
 #### add_to_hosts
 
 `add_to_hosts <hostname>`: Ask for an IP address (defaults to 127.0.0.1) and add `hostname` to /etc/hosts file.
