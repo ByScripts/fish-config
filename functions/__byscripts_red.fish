@@ -1,5 +1,5 @@
 #doc
-# `__byscripts_red $string`: Echoes $string in red color
+# `__byscripts_red $string`: Echoes `$string` in red color
 #enddoc
 
 function __byscripts_red -d "Echoes in red"

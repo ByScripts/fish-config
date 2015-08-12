@@ -109,7 +109,7 @@ Commands
 
 #### __byscripts_blue
 
-`__byscripts_blue $string`: Echoes $string in blue color
+`__byscripts_blue $string`: Echoes `$string` in blue color
 
 #### __byscripts_confirm
 
@@ -118,11 +118,11 @@ Return 0 (Y) or 1 (N) status to use with control structure (if, while...)
 
 #### __byscripts_green
 
-`__byscripts_green $string`: Echoes $string in green color
+`__byscripts_green $string`: Echoes `$string` in green color
 
 #### __byscripts_red
 
-`__byscripts_red $string`: Echoes $string in red color
+`__byscripts_red $string`: Echoes `$string` in red color
 
 #### __byscripts_spinner
 
