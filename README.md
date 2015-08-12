@@ -103,6 +103,27 @@ Commands
 
 [//]: # (commands)
 
+#### __byscripts_ask
+
+`__byscripts_ask $question`: Ask the user a `$question` and echoes the answer
+
+#### __byscripts_blue
+
+`__byscripts_blue $string`: Echoes $string in blue color
+
+#### __byscripts_confirm
+
+`__byscripts_confirm $string`: Ask the user to confirm (output: `$string [Yn]`)
+Return 0 (Y) or 1 (N) status to use with control structure (if, while...)
+
+#### __byscripts_green
+
+`__byscripts_green $string`: Echoes $string in green color
+
+#### __byscripts_red
+
+`__byscripts_red $string`: Echoes $string in red color
+
 #### __byscripts_spinner
 
 `__byscripts_spinner $pid`: Display a spinner while the process with PID `$pid` is running
