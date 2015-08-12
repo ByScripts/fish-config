@@ -14,9 +14,9 @@ function delete-domain --description 'Delete a domain configuration'
     set _doDatabaseUser 0
     set _doMySql 0
 
-    if __confirm "Drop MySQL user/database?"
+    if __byscripts_confirm "Drop MySQL user/database?"
         set _doMySql 1
-        __blue -n "Enter you MySQL root password: "
+        __byscripts_blue -n "Enter you MySQL root password: "
         stty -echo
         head -n 1 | read -l _tmpPassword
         set _rootPassword $_tmpPassword
@@ -26,77 +26,77 @@ function delete-domain --description 'Delete a domain configuration'
 
     if test -e $_filename
         echo
-        echo "> Apache config file will be deleted: "(__green -n $_filename)
+        echo "> Apache config file will be deleted: "(__byscripts_green -n $_filename)
         set _doApache 1
         set _doSomething 1
     else
         echo
-        echo (__blue -n "> WARNING")": Apache config file "(__green -n $_filename)" does not exists. This step will be skipped."
+        echo (__byscripts_blue -n "> WARNING")": Apache config file "(__byscripts_green -n $_filename)" does not exists. This step will be skipped."
     end
 
     if test $_doMySql = 1
         if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.db WHERE Db = '$_database')" | grep -q -E '1'
             echo
-            echo "> Database will be deleted: "(__green -n $_database)
+            echo "> Database will be deleted: "(__byscripts_green -n $_database)
             set _doDatabase 1
             set _doSomething 1
         else
             echo
-            echo (__blue -n "> WARNING")": Database "(__green -n $_database)" does not exists. This step will be skipped."
+            echo (__byscripts_blue -n "> WARNING")": Database "(__byscripts_green -n $_database)" does not exists. This step will be skipped."
         end
 
         if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = '$_database')" | grep -q -E '1'
             echo
-            echo "> Database user will be deleted: "(__green -n $_database)
+            echo "> Database user will be deleted: "(__byscripts_green -n $_database)
             set _doDatabaseUser 1
             set _doSomething 1
         else
             echo
-            echo (__blue -n "> WARNING")": Database user "(__green -n $_database)" does not exists. This step will be skipped."
+            echo (__byscripts_blue -n "> WARNING")": Database user "(__byscripts_green -n $_database)" does not exists. This step will be skipped."
         end
     end
 
     if test $_doSomething = 0
         echo
-        __red "Nothing to do. Abort."
+        __byscripts_red "Nothing to do. Abort."
         echo
         return
     end
 
     echo
 
-    if not __confirm "Continue?"
+    if not __byscripts_confirm "Continue?"
         echo
-        __green "Aborted."
+        __byscripts_green "Aborted."
         return
     end
 
     if test $_doApache = 1
         sudo a2dissite $_fqdn > /dev/null
-        __green "Website has been deactivated"
+        __byscripts_green "Website has been deactivated"
         sudo rm $_filename
-        __green "Apache config file has been deleted."
+        __byscripts_green "Apache config file has been deleted."
     end
 
     if test $_doMySql = 1
         if test $_doDatabaseUser = 1
             mysql -uroot -p$_rootPassword -e "DROP USER '$_database'@'localhost';"
-            __green "Database user has been deleted."
+            __byscripts_green "Database user has been deleted."
         end
 
         if test $_doDatabase = 1
             mysql -uroot -p$_rootPassword -e "DROP DATABASE IF EXISTS `$_database`;"
-            __green "Database has been deleted."
+            __byscripts_green "Database has been deleted."
         end
 
         mysql -uroot -p$_rootPassword -e "FLUSH PRIVILEGES;"
-        __green "MySQL permissions have been updated."
+        __byscripts_green "MySQL permissions have been updated."
     end
 
     if test $_doApache = 1
-        if __confirm "Do you want to reload Apache config (a2reload)?"
+        if __byscripts_confirm "Do you want to reload Apache config (a2reload)?"
             a2reload > /dev/null
-            __green "Apache config has been reloaded"
+            __byscripts_green "Apache config has been reloaded"
         end
     end
 end
