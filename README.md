@@ -111,6 +111,8 @@ Commands
 
 `__byscripts_blue $string`: Echoes `$string` in blue color
 
+Arguments passed to `__byscripts_blue` are propagated to `echo`
+
 #### __byscripts_confirm
 
 `__byscripts_confirm $string`: Ask the user to confirm (output: `$string [Yn]`)
@@ -120,9 +122,13 @@ Return 0 (Y) or 1 (N) status to use with control structure (if, while...)
 
 `__byscripts_green $string`: Echoes `$string` in green color
 
+Arguments passed to `__byscripts_green` are propagated to `echo`
+
 #### __byscripts_red
 
 `__byscripts_red $string`: Echoes `$string` in red color
+
+Arguments passed to `__byscripts_red` are propagated to `echo`
 
 #### __byscripts_spinner
 
