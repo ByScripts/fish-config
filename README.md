@@ -71,11 +71,6 @@ Abbreviations
         <tr><th align="right">nu</th><td>npm update</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">PGREP</th></tr></thead>
-    <tbody>
-        <tr><th align="right">pg</th><td>pgrep -l</td></tr>
-    </tbody>
-    <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Symfony</th></tr></thead>
     <tbody>
         <tr><th align="right">s</th><td>php app/console</td></tr>
@@ -91,6 +86,8 @@ Abbreviations
     <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Other</th></tr></thead>
     <tbody>
+        <tr><th align="right">pg</th><td>pgrep -l</td></tr>
+        <tr><th align="right">ccat</th><td>pygmentize -g</td></tr>
         <tr><th align="right">add_to_path</th><td>set -U fish_user_paths $fish_user_paths</td></tr>
         <tr><th align="right">freebox_mount</th><td>sudo mount -t cifs //mafreebox.freebox.fr/Disque\ dur /media/freebox -o user=freebox,uid=1000,gid=1000,rw,password=</td></tr>
     </tbody>

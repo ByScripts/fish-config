@@ -46,9 +46,6 @@ abbr nl 'npm list'
 abbr nr 'npm remove'
 abbr nu 'npm update'
 
-# PGREP
-abbr pg 'pgrep -l'
-
 # Symfony
 abbr s 'php app/console'
 abbr scc 'php app/console cache:clear'
@@ -61,5 +58,7 @@ abbr sdsv 'php app/console doctrine:schema:validate'
 abbr sddc 'php app/console doctrine:database:create'
 
 # Other
+abbr pg 'pgrep -l'
+abbr ccat 'pygmentize -g'
 abbr add_to_path 'set -U fish_user_paths $fish_user_paths'
 abbr freebox_mount 'sudo mount -t cifs //mafreebox.freebox.fr/Disque\\ dur /media/freebox -o user=freebox,uid=1000,gid=1000,rw,password='
