@@ -154,6 +154,10 @@ Arguments passed to `__byscripts_red` are propagated to `echo`
 `gitignore app1 app2 ... >> .gitignore`: Create a .gitignore from www.gitignore.io
 Get a list of applications with `gitignore list` or simply press TAB to get autocompletion
 
+#### mkcd
+
+`mkcd foo/bar/baz`: Runs `mkdir foo/bar/baz` then `cd foo/bar/baz`
+
 #### mongochef-update
 
 `mongochef-update <url>`:
