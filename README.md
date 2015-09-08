@@ -45,12 +45,16 @@ Abbreviations
         <tr><th align="right">g</th><td>git</td></tr>
         <tr><th align="right">ga.</th><td>git add .</td></tr>
         <tr><th align="right">ga</th><td>git add</td></tr>
+        <tr><th align="right">gb</th><td>git branch</td></tr>
+        <tr><th align="right">gbd</th><td>git branch -D</td></tr>
         <tr><th align="right">gcm</th><td>git commit -m</td></tr>
         <tr><th align="right">gco</th><td>git checkout</td></tr>
+        <tr><th align="right">gcob</th><td>git checkout -b</td></tr>
         <tr><th align="right">gi</th><td>gitignore</td></tr>
         <tr><th align="right">gm</th><td>git merge</td></tr>
         <tr><th align="right">gpl</th><td>git pull</td></tr>
         <tr><th align="right">gps</th><td>git push</td></tr>
+        <tr><th align="right">gpsu</th><td>git push -u origin master</td></tr>
         <tr><th align="right">gs</th><td>git status</td></tr>
         <tr><th align="right">gc</th><td>git clone</td></tr>
         <tr><th align="right">gd</th><td>git diff</td></tr>
