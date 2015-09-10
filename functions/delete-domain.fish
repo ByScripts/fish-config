@@ -94,8 +94,8 @@ function delete-domain --description 'Delete a domain configuration'
     end
 
     if test $_doApache = 1
-        if __byscripts_confirm "Do you want to reload Apache config (a2reload)?"
-            a2reload > /dev/null
+        if __byscripts_confirm "Do you want to reload Apache config (service apache2 reload)?"
+            sudo service apache2 reload > /dev/null
             __byscripts_green "Apache config has been reloaded"
         end
     end
