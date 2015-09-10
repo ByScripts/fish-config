@@ -35,6 +35,7 @@ Abbreviations
         <tr><th align="right">c</th><td>composer</td></tr>
         <tr><th align="right">ci</th><td>composer install</td></tr>
         <tr><th align="right">cr</th><td>composer require</td></tr>
+        <tr><th align="right">crd</th><td>composer require --dev</td></tr>
         <tr><th align="right">csu</th><td>sudo composer self-update</td></tr>
         <tr><th align="right">cu</th><td>composer update</td></tr>
         <tr><th align="right">cv</th><td>composer validate</td></tr>
@@ -79,6 +80,7 @@ Abbreviations
     <tbody>
         <tr><th align="right">s</th><td>php app/console</td></tr>
         <tr><th align="right">scc</th><td>php app/console cache:clear</td></tr>
+        <tr><th align="right">sccp</th><td>php app/console cache:clear --env=prod</td></tr>
         <tr><th align="right">sgb</th><td>php app/console generate:bundle</td></tr>
         <tr><th align="right">sgc</th><td>php app/console generate:controller</td></tr>
         <tr><th align="right">sdge</th><td>php app/console doctrine:generate:entity</td></tr>
@@ -92,6 +94,7 @@ Abbreviations
     <tbody>
         <tr><th align="right">s3</th><td>php bin/console</td></tr>
         <tr><th align="right">s3cc</th><td>php bin/console cache:clear</td></tr>
+        <tr><th align="right">s3ccp</th><td>php bin/console cache:clear --env=prod</td></tr>
         <tr><th align="right">s3gb</th><td>php bin/console generate:bundle</td></tr>
         <tr><th align="right">s3gc</th><td>php bin/console generate:controller</td></tr>
         <tr><th align="right">s3dge</th><td>php bin/console doctrine:generate:entity</td></tr>
