@@ -51,7 +51,7 @@ abbr nl 'npm list'
 abbr nr 'npm remove'
 abbr nu 'npm update'
 
-# Symfony
+# Symfony 2.0
 abbr s 'php app/console'
 abbr scc 'php app/console cache:clear'
 abbr sccp 'php app/console cache:clear --env=prod'
@@ -62,6 +62,18 @@ abbr sdsc 'php app/console doctrine:schema:create'
 abbr sdsu 'php app/console doctrine:schema:update'
 abbr sdsv 'php app/console doctrine:schema:validate'
 abbr sddc 'php app/console doctrine:database:create'
+
+# Symfony 3.0
+abbr s3 'php bin/console'
+abbr s3cc 'php bin/console cache:clear'
+abbr s3ccp 'php bin/console cache:clear --env=prod'
+abbr s3gb 'php bin/console generate:bundle'
+abbr s3gc 'php bin/console generate:controller'
+abbr s3dge 'php bin/console doctrine:generate:entity'
+abbr s3dsc 'php bin/console doctrine:schema:create'
+abbr s3dsu 'php bin/console doctrine:schema:update'
+abbr s3dsv 'php bin/console doctrine:schema:validate'
+abbr s3ddc 'php bin/console doctrine:database:create'
 
 # Other
 abbr pg 'pgrep -l'

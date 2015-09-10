@@ -75,7 +75,7 @@ Abbreviations
         <tr><th align="right">nu</th><td>npm update</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">Symfony</th></tr></thead>
+    <thead><tr><th colspan="2" align="left">Symfony 2.0</th></tr></thead>
     <tbody>
         <tr><th align="right">s</th><td>php app/console</td></tr>
         <tr><th align="right">scc</th><td>php app/console cache:clear</td></tr>
@@ -86,6 +86,19 @@ Abbreviations
         <tr><th align="right">sdsu</th><td>php app/console doctrine:schema:update</td></tr>
         <tr><th align="right">sdsv</th><td>php app/console doctrine:schema:validate</td></tr>
         <tr><th align="right">sddc</th><td>php app/console doctrine:database:create</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Symfony 3.0</th></tr></thead>
+    <tbody>
+        <tr><th align="right">s3</th><td>php bin/console</td></tr>
+        <tr><th align="right">s3cc</th><td>php bin/console cache:clear</td></tr>
+        <tr><th align="right">s3gb</th><td>php bin/console generate:bundle</td></tr>
+        <tr><th align="right">s3gc</th><td>php bin/console generate:controller</td></tr>
+        <tr><th align="right">s3dge</th><td>php bin/console doctrine:generate:entity</td></tr>
+        <tr><th align="right">s3dsc</th><td>php bin/console doctrine:schema:create</td></tr>
+        <tr><th align="right">s3dsu</th><td>php bin/console doctrine:schema:update</td></tr>
+        <tr><th align="right">s3dsv</th><td>php bin/console doctrine:schema:validate</td></tr>
+        <tr><th align="right">s3ddc</th><td>php bin/console doctrine:database:create</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Other</th></tr></thead>
