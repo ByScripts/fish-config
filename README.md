@@ -43,6 +43,7 @@ Abbreviations
         <tr><th align="right">c</th><td>composer</td></tr>
         <tr><th align="right">ci</th><td>composer install</td></tr>
         <tr><th align="right">cr</th><td>composer require</td></tr>
+        <tr><th align="right">crd</th><td>composer require --dev</td></tr>
         <tr><th align="right">csu</th><td>sudo composer self-update</td></tr>
         <tr><th align="right">cu</th><td>composer update</td></tr>
         <tr><th align="right">cv</th><td>composer validate</td></tr>
@@ -53,12 +54,16 @@ Abbreviations
         <tr><th align="right">g</th><td>git</td></tr>
         <tr><th align="right">ga.</th><td>git add .</td></tr>
         <tr><th align="right">ga</th><td>git add</td></tr>
+        <tr><th align="right">gb</th><td>git branch</td></tr>
+        <tr><th align="right">gbd</th><td>git branch -D</td></tr>
         <tr><th align="right">gcm</th><td>git commit -m</td></tr>
         <tr><th align="right">gco</th><td>git checkout</td></tr>
+        <tr><th align="right">gcob</th><td>git checkout -b</td></tr>
         <tr><th align="right">gi</th><td>gitignore</td></tr>
         <tr><th align="right">gm</th><td>git merge</td></tr>
         <tr><th align="right">gpl</th><td>git pull</td></tr>
         <tr><th align="right">gps</th><td>git push</td></tr>
+        <tr><th align="right">gpsu</th><td>git push -u origin master</td></tr>
         <tr><th align="right">gs</th><td>git status</td></tr>
         <tr><th align="right">gc</th><td>git clone</td></tr>
         <tr><th align="right">gd</th><td>git diff</td></tr>
@@ -79,15 +84,11 @@ Abbreviations
         <tr><th align="right">nu</th><td>npm update</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">PGREP</th></tr></thead>
-    <tbody>
-        <tr><th align="right">pg</th><td>pgrep -l</td></tr>
-    </tbody>
-    <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">Symfony</th></tr></thead>
+    <thead><tr><th colspan="2" align="left">Symfony 2.0</th></tr></thead>
     <tbody>
         <tr><th align="right">s</th><td>php app/console</td></tr>
         <tr><th align="right">scc</th><td>php app/console cache:clear</td></tr>
+        <tr><th align="right">sccp</th><td>php app/console cache:clear --env=prod</td></tr>
         <tr><th align="right">sgb</th><td>php app/console generate:bundle</td></tr>
         <tr><th align="right">sgc</th><td>php app/console generate:controller</td></tr>
         <tr><th align="right">sdge</th><td>php app/console doctrine:generate:entity</td></tr>
@@ -97,8 +98,24 @@ Abbreviations
         <tr><th align="right">sddc</th><td>php app/console doctrine:database:create</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Symfony 3.0</th></tr></thead>
+    <tbody>
+        <tr><th align="right">s3</th><td>php bin/console</td></tr>
+        <tr><th align="right">s3cc</th><td>php bin/console cache:clear</td></tr>
+        <tr><th align="right">s3ccp</th><td>php bin/console cache:clear --env=prod</td></tr>
+        <tr><th align="right">s3gb</th><td>php bin/console generate:bundle</td></tr>
+        <tr><th align="right">s3gc</th><td>php bin/console generate:controller</td></tr>
+        <tr><th align="right">s3dge</th><td>php bin/console doctrine:generate:entity</td></tr>
+        <tr><th align="right">s3dsc</th><td>php bin/console doctrine:schema:create</td></tr>
+        <tr><th align="right">s3dsu</th><td>php bin/console doctrine:schema:update</td></tr>
+        <tr><th align="right">s3dsv</th><td>php bin/console doctrine:schema:validate</td></tr>
+        <tr><th align="right">s3ddc</th><td>php bin/console doctrine:database:create</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Other</th></tr></thead>
     <tbody>
+        <tr><th align="right">pg</th><td>pgrep -l</td></tr>
+        <tr><th align="right">ccat</th><td>pygmentize -g</td></tr>
         <tr><th align="right">add_to_path</th><td>set -U fish_user_paths $fish_user_paths</td></tr>
         <tr><th align="right">freebox_mount</th><td>sudo mount -t cifs //mafreebox.freebox.fr/Disque\ dur /media/freebox -o user=freebox,uid=1000,gid=1000,rw,password=</td></tr>
     </tbody>
@@ -110,6 +127,38 @@ Commands
 --------
 
 [//]: # (commands)
+
+#### __byscripts_ask
+
+`__byscripts_ask $question`: Ask the user a `$question` and echoes the answer
+
+#### __byscripts_blue
+
+`__byscripts_blue $string`: Echoes `$string` in blue color
+
+Arguments passed to `__byscripts_blue` are propagated to `echo`
+
+#### __byscripts_confirm
+
+`__byscripts_confirm $string`: Ask the user to confirm (output: `$string [Yn]`)
+
+Return `0` (Y) or `1` (N) status to use with control structure (`if`, `while`...)
+
+#### __byscripts_green
+
+`__byscripts_green $string`: Echoes `$string` in green color
+
+Arguments passed to `__byscripts_green` are propagated to `echo`
+
+#### __byscripts_red
+
+`__byscripts_red $string`: Echoes `$string` in red color
+
+Arguments passed to `__byscripts_red` are propagated to `echo`
+
+#### __byscripts_spinner
+
+`__byscripts_spinner $pid`: Display a spinner while the process with PID `$pid` is running
 
 #### add_to_hosts
 
@@ -132,6 +181,10 @@ Commands
 
 `gitignore app1 app2 ... >> .gitignore`: Create a .gitignore from www.gitignore.io
 Get a list of applications with `gitignore list` or simply press TAB to get autocompletion
+
+#### mkcd
+
+`mkcd foo/bar/baz`: Runs `mkdir foo/bar/baz` then `cd foo/bar/baz`
 
 #### mongochef-update
 

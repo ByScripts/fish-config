@@ -21,9 +21,9 @@ function create-domain -d "Create a new domain configuration"
     set _doDatabaseUser 0
     set _doMySql 0
 
-    if __confirm "Configure MySQL user/database?"
+    if __byscripts_confirm "Configure MySQL user/database?"
         set _doMySql 1
-        __blue -n "Enter you MySQL root password: "
+        __byscripts_blue -n "Enter you MySQL root password: "
         stty -echo
         head -n 1 | read -l _tmpPassword
         set _rootPassword $_tmpPassword
@@ -33,11 +33,11 @@ function create-domain -d "Create a new domain configuration"
 
     if test -e $_filename
         echo
-        echo (__blue -n "> WARNING")": Apache config file "(__green -n $_filename)" already exists. This step will be skipped."
+        echo (__byscripts_blue -n "> WARNING")": Apache config file "(__byscripts_green -n $_filename)" already exists. This step will be skipped."
     else
         echo
-        echo "> Apache config file will be created: "(__green -n $_filename)
-        set _documentRoot (__ask "Document root" "$_documentRoot")
+        echo "> Apache config file will be created: "(__byscripts_green -n $_filename)
+        set _documentRoot (__byscripts_ask "Document root" "$_documentRoot")
         set _doApache 1
         set _doSomething 1
     end
@@ -45,20 +45,20 @@ function create-domain -d "Create a new domain configuration"
     if test $_doMySql = 1
         if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.db WHERE Db = '$_database')" | grep -q -E '1'
             echo
-            echo (__blue -n "> WARNING")": Database "(__green -n $_database)" already exists. This step will be skipped."
+            echo (__byscripts_blue -n "> WARNING")": Database "(__byscripts_green -n $_database)" already exists. This step will be skipped."
         else
             echo
-            echo "> Database will be created: "(__green -n $_database)
+            echo "> Database will be created: "(__byscripts_green -n $_database)
             set _doDatabase 1
             set _doSomething 1
         end
 
         if mysql -uroot -p$_rootPassword -N -B -e "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = '$_database')" | grep -q -E '1'
             echo
-            echo (__blue -n "> WARNING")": Database user "(__green -n $_database)" already exists. This step will be skipped."
+            echo (__byscripts_blue -n "> WARNING")": Database user "(__byscripts_green -n $_database)" already exists. This step will be skipped."
         else
             echo
-            echo "> Database user will be created: "(__green -n $_database)
+            echo "> Database user will be created: "(__byscripts_green -n $_database)
             set _doDatabaseUser 1
             set _doSomething 1
         end
@@ -66,16 +66,16 @@ function create-domain -d "Create a new domain configuration"
 
     if test $_doSomething = 0
         echo
-        __red "Nothing to do. Abort."
+        __byscripts_red "Nothing to do. Abort."
         echo
         return
     end
 
     echo
 
-    if not __confirm "Continue?"
+    if not __byscripts_confirm "Continue?"
         echo
-        __red "Aborted."
+        __byscripts_red "Aborted."
         return
     end
 
@@ -84,42 +84,42 @@ function create-domain -d "Create a new domain configuration"
         sudo sed -i "s#_DOCUMENT_ROOT_#$_documentRoot#g" $_filename
         sudo sed -i "s/_DOMAIN_/$_domain/g" $_filename
         sudo sed -i "s/_TLD_/$_tld/g" $_filename
-        __green "Apache config file has been created."
+        __byscripts_green "Apache config file has been created."
     end
 
     if test $_doMySql = 1
         if test $_doDatabaseUser = 1
             mysql -uroot -p$_rootPassword -e "CREATE USER '$_database'@'localhost' IDENTIFIED BY '$_password';"
-            __green "Database user has been created with password: "(__blue -n $_password)
+            __byscripts_green "Database user has been created with password: "(__byscripts_blue -n $_password)
         end
 
         if test $_doDatabase = 1
             mysql -uroot -p$_rootPassword -e "CREATE DATABASE IF NOT EXISTS `$_database`;"
-            __green "Database has been created."
+            __byscripts_green "Database has been created."
         end
 
         mysql -uroot -p$_rootPassword -e "GRANT ALL ON `$_database`.* TO '$_database'@'localhost';FLUSH PRIVILEGES;"
-        __green "User's permissions on database have been updated."
+        __byscripts_green "User's permissions on database have been updated."
 
         echo
     end
 
     if test $_doApache = 1
-        if __confirm "Do you want to activate the website (a2ensite)?"
+        if __byscripts_confirm "Do you want to activate the website (a2ensite)?"
             sudo a2ensite $_fqdn > /dev/null
-            __green "Website has been activated."
+            __byscripts_green "Website has been activated."
 
-            if __confirm "Do you want to reload the Apache config (a2reload)?"
-                a2reload > /dev/null
-                __green "Apache config has been reloaded."
+            if __byscripts_confirm "Do you want to reload the Apache config (service apache2 reload)?"
+                sudo service apache2 reload > /dev/null
+                __byscripts_green "Apache config has been reloaded."
             end
         else
-            __red "Website has not been activated."
+            __byscripts_red "Website has not been activated."
         end
     end
 
     if not grep -q "$_fqdn" /etc/hosts
-        if __confirm "Do you want to add $_fqdn to you hosts file?"
+        if __byscripts_confirm "Do you want to add $_fqdn to you hosts file?"
             add_to_hosts "$_fqdn"
         end
     end

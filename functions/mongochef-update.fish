@@ -9,7 +9,7 @@
 function mongochef-update -a url
 
     if test -z $url
-        __red "Usage: mongochef-update <url>"
+        __byscripts_red "Usage: mongochef-update <url>"
         return
     end
 
@@ -19,7 +19,7 @@ function mongochef-update -a url
     echo -n "    "
     wget -P "/tmp" --progress=dot $url 2>&1 | grep --line-buffered "%" | sed -u -e "s,\.,,g" | awk '{printf("\b\b\b\b%4s", $2)}'
     echo -ne "\b\b\b\b"
-    __green "OK"
+    __byscripts_green "OK"
 
     if test -d "$HOME/Applications/MongoChef"
         set -l TODAY (date +"%Y-%m-%d-%H-%M")
@@ -30,5 +30,5 @@ function mongochef-update -a url
 
     echo -n "Extracting $MONGOCHEF_FILENAME... "
     tar --strip-components=1 -C "$HOME/Applications/MongoChef" -xzf "/tmp/$MONGOCHEF_FILENAME"
-    __green "OK"
+    __byscripts_green "OK"
 end
