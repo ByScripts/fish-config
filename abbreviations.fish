@@ -13,6 +13,12 @@ abbr r 'sudo apt-get remove'
 abbr u 'sudo apt-get update'
 abbr ug 'sudo apt-get upgrade'
 
+# Bower
+abbr b 'bower'
+abbr bi 'bower install --save'
+abbr bp 'bower prune'
+abbr bu 'bower update'
+
 # Composer
 abbr c 'composer'
 abbr ci 'composer install'
