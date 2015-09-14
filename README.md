@@ -30,6 +30,14 @@ Abbreviations
         <tr><th align="right">ug</th><td>sudo apt-get upgrade</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Bower</th></tr></thead>
+    <tbody>
+        <tr><th align="right">b</th><td>bower</td></tr>
+        <tr><th align="right">bi</th><td>bower install --save</td></tr>
+        <tr><th align="right">bp</th><td>bower prune</td></tr>
+        <tr><th align="right">bu</th><td>bower update</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Composer</th></tr></thead>
     <tbody>
         <tr><th align="right">c</th><td>composer</td></tr>
