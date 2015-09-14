@@ -40,6 +40,28 @@ abbr gs 'git status'
 abbr gc 'git clone'
 abbr gd 'git diff'
 
+# [Git Flow](https://github.com/nvie/gitflow)
+abbr gf 'git flow'
+abbr gfi 'git flow init -d'
+
+abbr gff 'git flow feature'
+abbr gffs 'git flow feature start'
+abbr gfff 'git flow feature finish'
+abbr gffps 'git flow feature publish'
+abbr gffpl 'git flow feature pull'
+
+abbr gfr 'git flow release'
+abbr gfrs 'git flow release start'
+abbr gfrf 'git flow release finish'
+abbr gfrps 'git flow release publish'
+abbr gfrpl 'git flow release pull'
+
+abbr gfh 'git flow hotfix'
+abbr gfhs 'git flow hotfix start'
+abbr gfhf 'git flow hotfix finish'
+abbr gfhps 'git flow hotfix publish'
+abbr gfhpl 'git flow hotfix pull'
+
 # LS
 abbr l 'ls'
 

@@ -61,6 +61,27 @@ Abbreviations
         <tr><th align="right">gd</th><td>git diff</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">[Git Flow](https://github.com/nvie/gitflow)</th></tr></thead>
+    <tbody>
+        <tr><th align="right">gf</th><td>git flow</td></tr>
+        <tr><th align="right">gfi</th><td>git flow init -d</td></tr>
+        <tr><th align="right">gff</th><td>git flow feature</td></tr>
+        <tr><th align="right">gffs</th><td>git flow feature start</td></tr>
+        <tr><th align="right">gfff</th><td>git flow feature finish</td></tr>
+        <tr><th align="right">gffps</th><td>git flow feature publish</td></tr>
+        <tr><th align="right">gffpl</th><td>git flow feature pull</td></tr>
+        <tr><th align="right">gfr</th><td>git flow release</td></tr>
+        <tr><th align="right">gfrs</th><td>git flow release start</td></tr>
+        <tr><th align="right">gfrf</th><td>git flow release finish</td></tr>
+        <tr><th align="right">gfrps</th><td>git flow release publish</td></tr>
+        <tr><th align="right">gfrpl</th><td>git flow release pull</td></tr>
+        <tr><th align="right">gfh</th><td>git flow hotfix</td></tr>
+        <tr><th align="right">gfhs</th><td>git flow hotfix start</td></tr>
+        <tr><th align="right">gfhf</th><td>git flow hotfix finish</td></tr>
+        <tr><th align="right">gfhps</th><td>git flow hotfix publish</td></tr>
+        <tr><th align="right">gfhpl</th><td>git flow hotfix pull</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">LS</th></tr></thead>
     <tbody>
         <tr><th align="right">l</th><td>ls</td></tr>
