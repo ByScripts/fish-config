@@ -79,7 +79,7 @@ abbr nl 'npm list'
 abbr nr 'npm remove'
 abbr nu 'npm update'
 
-# Symfony 2.0
+# Symfony 2.x
 abbr s 'php app/console'
 abbr scc 'php app/console cache:clear'
 abbr sccp 'php app/console cache:clear --env=prod'
@@ -91,7 +91,7 @@ abbr sdsu 'php app/console doctrine:schema:update'
 abbr sdsv 'php app/console doctrine:schema:validate'
 abbr sddc 'php app/console doctrine:database:create'
 
-# Symfony 3.0
+# Symfony 3.x
 abbr s3 'php bin/console'
 abbr s3cc 'php bin/console cache:clear'
 abbr s3ccp 'php bin/console cache:clear --env=prod'

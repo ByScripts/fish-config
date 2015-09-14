@@ -105,7 +105,7 @@ Abbreviations
         <tr><th align="right">nu</th><td>npm update</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">Symfony 2.0</th></tr></thead>
+    <thead><tr><th colspan="2" align="left">Symfony 2.x</th></tr></thead>
     <tbody>
         <tr><th align="right">s</th><td>php app/console</td></tr>
         <tr><th align="right">scc</th><td>php app/console cache:clear</td></tr>
@@ -119,7 +119,7 @@ Abbreviations
         <tr><th align="right">sddc</th><td>php app/console doctrine:database:create</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">Symfony 3.0</th></tr></thead>
+    <thead><tr><th colspan="2" align="left">Symfony 3.x</th></tr></thead>
     <tbody>
         <tr><th align="right">s3</th><td>php bin/console</td></tr>
         <tr><th align="right">s3cc</th><td>php bin/console cache:clear</td></tr>
