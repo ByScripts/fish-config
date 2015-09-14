@@ -55,18 +55,24 @@ abbr gffs 'git flow feature start'
 abbr gfff 'git flow feature finish'
 abbr gffps 'git flow feature publish'
 abbr gffpl 'git flow feature pull'
+abbr gfft 'git flow feature track'
+abbr gffco 'git flow feature checkout'
 
 abbr gfr 'git flow release'
 abbr gfrs 'git flow release start'
 abbr gfrf 'git flow release finish'
 abbr gfrps 'git flow release publish'
 abbr gfrpl 'git flow release pull'
+abbr gfrt 'git flow release track'
+abbr gfrco 'git flow release checkout'
 
 abbr gfh 'git flow hotfix'
 abbr gfhs 'git flow hotfix start'
 abbr gfhf 'git flow hotfix finish'
 abbr gfhps 'git flow hotfix publish'
 abbr gfhpl 'git flow hotfix pull'
+abbr gfht 'git flow hotfix track'
+abbr gfhco 'git flow hotfix checkout'
 
 # LS
 abbr l 'ls'
@@ -78,6 +84,9 @@ abbr np 'npm prune'
 abbr nl 'npm list'
 abbr nr 'npm remove'
 abbr nu 'npm update'
+
+# RM
+abbr rmrf "rm -rf"
 
 # Symfony 2.x
 abbr s 'php app/console'
