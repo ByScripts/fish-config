@@ -46,7 +46,7 @@ abbr gs 'git status'
 abbr gc 'git clone'
 abbr gd 'git diff'
 
-# [Git Flow](https://github.com/nvie/gitflow)
+# <a href="https://github.com/nvie/gitflow">Git Flow</a>
 abbr gf 'git flow'
 abbr gfi 'git flow init -d'
 
