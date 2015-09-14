@@ -87,6 +87,13 @@ Abbreviations
         <tr><th align="right">gfrpl</th><td>git flow release pull</td></tr>
         <tr><th align="right">gfrt</th><td>git flow release track</td></tr>
         <tr><th align="right">gfrco</th><td>git flow release checkout</td></tr>
+        <tr><th align="right">gfb</th><td>git flow bugfix</td></tr>
+        <tr><th align="right">gfbs</th><td>git flow bugfix start</td></tr>
+        <tr><th align="right">gfbf</th><td>git flow bugfix finish</td></tr>
+        <tr><th align="right">gfbps</th><td>git flow bugfix publish</td></tr>
+        <tr><th align="right">gfbpl</th><td>git flow bugfix pull</td></tr>
+        <tr><th align="right">gfbt</th><td>git flow bugfix track</td></tr>
+        <tr><th align="right">gfbco</th><td>git flow bugfix checkout</td></tr>
         <tr><th align="right">gfh</th><td>git flow hotfix</td></tr>
         <tr><th align="right">gfhs</th><td>git flow hotfix start</td></tr>
         <tr><th align="right">gfhf</th><td>git flow hotfix finish</td></tr>
