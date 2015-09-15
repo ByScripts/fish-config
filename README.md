@@ -69,7 +69,7 @@ Abbreviations
         <tr><th align="right">gd</th><td>git diff</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left"><a href="https://github.com/nvie/gitflow">Git Flow</a></th></tr></thead>
+    <thead><tr><th colspan="2" align="left"><a href="https://github.com/petervanderdoes/gitflow-avh">Git Flow AVH</a></th></tr></thead>
     <tbody>
         <tr><th align="right">gf</th><td>git flow</td></tr>
         <tr><th align="right">gfi</th><td>git flow init -d</td></tr>
