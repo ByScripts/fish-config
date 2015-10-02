@@ -46,6 +46,42 @@ abbr gs 'git status'
 abbr gc 'git clone'
 abbr gd 'git diff'
 
+# <a href="https://github.com/petervanderdoes/gitflow-avh">Git Flow AVH</a>
+abbr gf 'git flow'
+abbr gfi 'git flow init -d'
+
+abbr gff 'git flow feature'
+abbr gffs 'git flow feature start'
+abbr gfff 'git flow feature finish'
+abbr gffps 'git flow feature publish'
+abbr gffpl 'git flow feature pull'
+abbr gfft 'git flow feature track'
+abbr gffco 'git flow feature checkout'
+
+abbr gfr 'git flow release'
+abbr gfrs 'git flow release start'
+abbr gfrf 'git flow release finish'
+abbr gfrps 'git flow release publish'
+abbr gfrpl 'git flow release pull'
+abbr gfrt 'git flow release track'
+abbr gfrco 'git flow release checkout'
+
+abbr gfb 'git flow bugfix'
+abbr gfbs 'git flow bugfix start'
+abbr gfbf 'git flow bugfix finish'
+abbr gfbps 'git flow bugfix publish'
+abbr gfbpl 'git flow bugfix pull'
+abbr gfbt 'git flow bugfix track'
+abbr gfbco 'git flow bugfix checkout'
+
+abbr gfh 'git flow hotfix'
+abbr gfhs 'git flow hotfix start'
+abbr gfhf 'git flow hotfix finish'
+abbr gfhps 'git flow hotfix publish'
+abbr gfhpl 'git flow hotfix pull'
+abbr gfht 'git flow hotfix track'
+abbr gfhco 'git flow hotfix checkout'
+
 # LS
 abbr l 'ls'
 
@@ -57,7 +93,10 @@ abbr nl 'npm list'
 abbr nr 'npm remove'
 abbr nu 'npm update'
 
-# Symfony 2.0
+# RM
+abbr rmrf "rm -rf"
+
+# Symfony 2.x
 abbr s 'php app/console'
 abbr scc 'php app/console cache:clear'
 abbr sccp 'php app/console cache:clear --env=prod'
@@ -69,7 +108,7 @@ abbr sdsu 'php app/console doctrine:schema:update'
 abbr sdsv 'php app/console doctrine:schema:validate'
 abbr sddc 'php app/console doctrine:database:create'
 
-# Symfony 3.0
+# Symfony 3.x
 abbr s3 'php bin/console'
 abbr s3cc 'php bin/console cache:clear'
 abbr s3ccp 'php bin/console cache:clear --env=prod'

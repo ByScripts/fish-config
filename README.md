@@ -69,6 +69,40 @@ Abbreviations
         <tr><th align="right">gd</th><td>git diff</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left"><a href="https://github.com/petervanderdoes/gitflow-avh">Git Flow AVH</a></th></tr></thead>
+    <tbody>
+        <tr><th align="right">gf</th><td>git flow</td></tr>
+        <tr><th align="right">gfi</th><td>git flow init -d</td></tr>
+        <tr><th align="right">gff</th><td>git flow feature</td></tr>
+        <tr><th align="right">gffs</th><td>git flow feature start</td></tr>
+        <tr><th align="right">gfff</th><td>git flow feature finish</td></tr>
+        <tr><th align="right">gffps</th><td>git flow feature publish</td></tr>
+        <tr><th align="right">gffpl</th><td>git flow feature pull</td></tr>
+        <tr><th align="right">gfft</th><td>git flow feature track</td></tr>
+        <tr><th align="right">gffco</th><td>git flow feature checkout</td></tr>
+        <tr><th align="right">gfr</th><td>git flow release</td></tr>
+        <tr><th align="right">gfrs</th><td>git flow release start</td></tr>
+        <tr><th align="right">gfrf</th><td>git flow release finish</td></tr>
+        <tr><th align="right">gfrps</th><td>git flow release publish</td></tr>
+        <tr><th align="right">gfrpl</th><td>git flow release pull</td></tr>
+        <tr><th align="right">gfrt</th><td>git flow release track</td></tr>
+        <tr><th align="right">gfrco</th><td>git flow release checkout</td></tr>
+        <tr><th align="right">gfb</th><td>git flow bugfix</td></tr>
+        <tr><th align="right">gfbs</th><td>git flow bugfix start</td></tr>
+        <tr><th align="right">gfbf</th><td>git flow bugfix finish</td></tr>
+        <tr><th align="right">gfbps</th><td>git flow bugfix publish</td></tr>
+        <tr><th align="right">gfbpl</th><td>git flow bugfix pull</td></tr>
+        <tr><th align="right">gfbt</th><td>git flow bugfix track</td></tr>
+        <tr><th align="right">gfbco</th><td>git flow bugfix checkout</td></tr>
+        <tr><th align="right">gfh</th><td>git flow hotfix</td></tr>
+        <tr><th align="right">gfhs</th><td>git flow hotfix start</td></tr>
+        <tr><th align="right">gfhf</th><td>git flow hotfix finish</td></tr>
+        <tr><th align="right">gfhps</th><td>git flow hotfix publish</td></tr>
+        <tr><th align="right">gfhpl</th><td>git flow hotfix pull</td></tr>
+        <tr><th align="right">gfht</th><td>git flow hotfix track</td></tr>
+        <tr><th align="right">gfhco</th><td>git flow hotfix checkout</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">LS</th></tr></thead>
     <tbody>
         <tr><th align="right">l</th><td>ls</td></tr>
@@ -84,7 +118,12 @@ Abbreviations
         <tr><th align="right">nu</th><td>npm update</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">Symfony 2.0</th></tr></thead>
+    <thead><tr><th colspan="2" align="left">RM</th></tr></thead>
+    <tbody>
+        <tr><th align="right">rmrf</th><td>"rm -rf"</td></tr>
+    </tbody>
+    <tr><td colspan="2"></td></tr>
+    <thead><tr><th colspan="2" align="left">Symfony 2.x</th></tr></thead>
     <tbody>
         <tr><th align="right">s</th><td>php app/console</td></tr>
         <tr><th align="right">scc</th><td>php app/console cache:clear</td></tr>
@@ -98,7 +137,7 @@ Abbreviations
         <tr><th align="right">sddc</th><td>php app/console doctrine:database:create</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
-    <thead><tr><th colspan="2" align="left">Symfony 3.0</th></tr></thead>
+    <thead><tr><th colspan="2" align="left">Symfony 3.x</th></tr></thead>
     <tbody>
         <tr><th align="right">s3</th><td>php bin/console</td></tr>
         <tr><th align="right">s3cc</th><td>php bin/console cache:clear</td></tr>
