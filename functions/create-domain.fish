@@ -35,11 +35,13 @@ function create-domain -d "Create a new domain configuration"
         echo
         echo (__byscripts_blue -n "> WARNING")": Apache config file "(__byscripts_green -n $_filename)" already exists. This step will be skipped."
     else
-        echo
-        echo "> Apache config file will be created: "(__byscripts_green -n $_filename)
-        set _documentRoot (__byscripts_ask "Document root" "$_documentRoot")
-        set _doApache 1
-        set _doSomething 1
+        if __byscripts_confirm "Create Apache config file?"
+            echo
+            echo "> Apache config file will be created: "(__byscripts_green -n $_filename)
+            set _documentRoot (__byscripts_ask "Document root" "$_documentRoot")
+            set _doApache 1
+            set _doSomething 1
+        end
     end
 
     if test $_doMySql = 1
@@ -94,7 +96,7 @@ function create-domain -d "Create a new domain configuration"
         end
 
         if test $_doDatabase = 1
-            mysql -uroot -p$_rootPassword -e "CREATE DATABASE IF NOT EXISTS `$_database`;"
+            mysql -uroot -p$_rootPassword -e "CREATE DATABASE IF NOT EXISTS `$_database` CHARACTER SET utf8 COLLATE utf8_general_ci;"
             __byscripts_green "Database has been created."
         end
 
