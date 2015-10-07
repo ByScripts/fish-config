@@ -17,7 +17,7 @@ function mongochef-update -a url
     set -l MONGOCHEF_FILENAME (basename "$url")
 
     echo -n "    "
-    wget -P "/tmp" --progress=dot $url 2>&1 | grep --line-buffered "%" | sed -u -e "s,\.,,g" | awk '{printf("\b\b\b\b%4s", $2)}'
+    command wget -P "/tmp" --progress=dot $url 2>&1 | command grep --line-buffered "%" | command sed -u -e "s,\.,,g" | command awk '{printf("\b\b\b\b%4s", $2)}'
     echo -ne "\b\b\b\b"
     __byscripts_green "OK"
 
