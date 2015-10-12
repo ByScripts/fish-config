@@ -57,6 +57,7 @@ Abbreviations
         <tr><th align="right">gb</th><td>git branch</td></tr>
         <tr><th align="right">gbd</th><td>git branch -D</td></tr>
         <tr><th align="right">gcm</th><td>git commit -m</td></tr>
+        <tr><th align="right">gcm!!!</th><td>git add .; and git commit -m "Update"; and git push</td></tr>
         <tr><th align="right">gco</th><td>git checkout</td></tr>
         <tr><th align="right">gcob</th><td>git checkout -b</td></tr>
         <tr><th align="right">gi</th><td>gitignore</td></tr>
@@ -110,7 +111,9 @@ Abbreviations
     <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">NPM</th></tr></thead>
     <tbody>
-        <tr><th align="right">ni</th><td>npm install --save-dev</td></tr>
+        <tr><th align="right">ni</th><td>npm install</td></tr>
+        <tr><th align="right">nis</th><td>npm install --save</td></tr>
+        <tr><th align="right">nisd</th><td>npm install --save-dev</td></tr>
         <tr><th align="right">nig</th><td>npm install -g</td></tr>
         <tr><th align="right">np</th><td>npm prune</td></tr>
         <tr><th align="right">nl</th><td>npm list</td></tr>

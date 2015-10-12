@@ -87,7 +87,9 @@ abbr gfhco 'git flow hotfix checkout'
 abbr l 'ls'
 
 # NPM
-abbr ni 'npm install --save-dev'
+abbr ni 'npm install'
+abbr nis 'npm install --save'
+abbr nisd 'npm install --save-dev'
 abbr nig 'npm install -g'
 abbr np 'npm prune'
 abbr nl 'npm list'
