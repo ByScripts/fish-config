@@ -16,7 +16,7 @@ function phpstorm-update -a url
     echo -n "Downloading $url... "
     set -l STORM_FILENAME (basename "$url")
 
-    rm -r "/tmp/$STORM_FILENAME"
+    rm -f "/tmp/$STORM_FILENAME"
 
     echo -n "    "
     command wget -P "/tmp" --progress=dot $url 2>&1 | command grep --line-buffered "%" | command sed -u -e "s,\.,,g" | command awk '{printf("\b\b\b\b%4s", $2)}'
