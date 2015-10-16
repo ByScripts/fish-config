@@ -125,6 +125,7 @@ abbr s3ddc 'php bin/console doctrine:database:create'
 
 # Other
 abbr pg 'pgrep -l'
+abbr psg 'ps -ef | grep'
 abbr ccat 'pygmentize -g'
 abbr add_to_path 'set -U fish_user_paths $fish_user_paths'
 abbr freebox_mount 'sudo mount -t cifs //mafreebox.freebox.fr/Disque\\ dur /media/freebox -o user=freebox,uid=1000,gid=1000,rw,password='
