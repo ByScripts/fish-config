@@ -77,29 +77,25 @@ Abbreviations
         <tr><th align="right">gff</th><td>git flow feature</td></tr>
         <tr><th align="right">gffs</th><td>git flow feature start</td></tr>
         <tr><th align="right">gfff</th><td>git flow feature finish</td></tr>
-        <tr><th align="right">gffps</th><td>git flow feature publish</td></tr>
-        <tr><th align="right">gffpl</th><td>git flow feature pull</td></tr>
+        <tr><th align="right">gffp</th><td>git flow feature publish</td></tr>
         <tr><th align="right">gfft</th><td>git flow feature track</td></tr>
         <tr><th align="right">gffco</th><td>git flow feature checkout</td></tr>
         <tr><th align="right">gfr</th><td>git flow release</td></tr>
         <tr><th align="right">gfrs</th><td>git flow release start</td></tr>
         <tr><th align="right">gfrf</th><td>git flow release finish</td></tr>
-        <tr><th align="right">gfrps</th><td>git flow release publish</td></tr>
-        <tr><th align="right">gfrpl</th><td>git flow release pull</td></tr>
+        <tr><th align="right">gfrp</th><td>git flow release publish</td></tr>
         <tr><th align="right">gfrt</th><td>git flow release track</td></tr>
         <tr><th align="right">gfrco</th><td>git flow release checkout</td></tr>
         <tr><th align="right">gfb</th><td>git flow bugfix</td></tr>
         <tr><th align="right">gfbs</th><td>git flow bugfix start</td></tr>
         <tr><th align="right">gfbf</th><td>git flow bugfix finish</td></tr>
-        <tr><th align="right">gfbps</th><td>git flow bugfix publish</td></tr>
-        <tr><th align="right">gfbpl</th><td>git flow bugfix pull</td></tr>
+        <tr><th align="right">gfbp</th><td>git flow bugfix publish</td></tr>
         <tr><th align="right">gfbt</th><td>git flow bugfix track</td></tr>
         <tr><th align="right">gfbco</th><td>git flow bugfix checkout</td></tr>
         <tr><th align="right">gfh</th><td>git flow hotfix</td></tr>
         <tr><th align="right">gfhs</th><td>git flow hotfix start</td></tr>
         <tr><th align="right">gfhf</th><td>git flow hotfix finish</td></tr>
-        <tr><th align="right">gfhps</th><td>git flow hotfix publish</td></tr>
-        <tr><th align="right">gfhpl</th><td>git flow hotfix pull</td></tr>
+        <tr><th align="right">gfhp</th><td>git flow hotfix publish</td></tr>
         <tr><th align="right">gfht</th><td>git flow hotfix track</td></tr>
         <tr><th align="right">gfhco</th><td>git flow hotfix checkout</td></tr>
     </tbody>
@@ -157,6 +153,7 @@ Abbreviations
     <thead><tr><th colspan="2" align="left">Other</th></tr></thead>
     <tbody>
         <tr><th align="right">pg</th><td>pgrep -l</td></tr>
+        <tr><th align="right">psg</th><td>ps -ef \| grep</td></tr>
         <tr><th align="right">ccat</th><td>pygmentize -g</td></tr>
         <tr><th align="right">add_to_path</th><td>set -U fish_user_paths $fish_user_paths</td></tr>
         <tr><th align="right">freebox_mount</th><td>sudo mount -t cifs //mafreebox.freebox.fr/Disque\ dur /media/freebox -o user=freebox,uid=1000,gid=1000,rw,password=</td></tr>
