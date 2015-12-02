@@ -5,7 +5,7 @@ end
 function __byscripts_decorate
 
 	__byscripts_decrease_remaining_length (expr (expr length $argv[1]) + 6)
-	echo -n "─┤ "
+	echo -n "─◁ "
 
 	if [ (count $argv) -gt 1 ]
 		set_color $argv[2..(count $argv)]
@@ -13,7 +13,7 @@ function __byscripts_decorate
 
 	echo -n $argv[1]
 	set_color $fish_color_normal
-	echo -n " ├─"
+	echo -n " ▷─"
 end
 
 function __byscripts_prompt_date
@@ -52,7 +52,7 @@ function __byscripts_prompt_fish
 end
 
 function fish_prompt
-	set -g _byscripts_remaining_length (expr $COLUMNS - 1)
+	set -g _byscripts_remaining_length (expr $COLUMNS)
 
 	echo -n "┌"
 
