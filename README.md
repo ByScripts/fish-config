@@ -124,30 +124,32 @@ Abbreviations
     <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Symfony 2.x</th></tr></thead>
     <tbody>
-        <tr><th align="right">s</th><td>php app/console</td></tr>
-        <tr><th align="right">scc</th><td>php app/console cache:clear</td></tr>
-        <tr><th align="right">sccp</th><td>php app/console cache:clear --env=prod</td></tr>
-        <tr><th align="right">sgb</th><td>php app/console generate:bundle</td></tr>
-        <tr><th align="right">sgc</th><td>php app/console generate:controller</td></tr>
-        <tr><th align="right">sdge</th><td>php app/console doctrine:generate:entity</td></tr>
-        <tr><th align="right">sdsc</th><td>php app/console doctrine:schema:create</td></tr>
-        <tr><th align="right">sdsu</th><td>php app/console doctrine:schema:update</td></tr>
-        <tr><th align="right">sdsv</th><td>php app/console doctrine:schema:validate</td></tr>
-        <tr><th align="right">sddc</th><td>php app/console doctrine:database:create</td></tr>
+        <tr><th align="right">s2</th><td>php app/console</td></tr>
+        <tr><th align="right">s2cc</th><td>php app/console cache:clear</td></tr>
+        <tr><th align="right">s2ccp</th><td>php app/console cache:clear --env=prod</td></tr>
+        <tr><th align="right">s2cct</th><td>php app/console cache:clear --env=test</td></tr>
+        <tr><th align="right">s2gb</th><td>php app/console generate:bundle</td></tr>
+        <tr><th align="right">s2gc</th><td>php app/console generate:controller</td></tr>
+        <tr><th align="right">s2dge</th><td>php app/console doctrine:generate:entity</td></tr>
+        <tr><th align="right">s2dsc</th><td>php app/console doctrine:schema:create</td></tr>
+        <tr><th align="right">s2dsu</th><td>php app/console doctrine:schema:update</td></tr>
+        <tr><th align="right">s2dsv</th><td>php app/console doctrine:schema:validate</td></tr>
+        <tr><th align="right">s2ddc</th><td>php app/console doctrine:database:create</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Symfony 3.x</th></tr></thead>
     <tbody>
-        <tr><th align="right">s3</th><td>php bin/console</td></tr>
-        <tr><th align="right">s3cc</th><td>php bin/console cache:clear</td></tr>
-        <tr><th align="right">s3ccp</th><td>php bin/console cache:clear --env=prod</td></tr>
-        <tr><th align="right">s3gb</th><td>php bin/console generate:bundle</td></tr>
-        <tr><th align="right">s3gc</th><td>php bin/console generate:controller</td></tr>
-        <tr><th align="right">s3dge</th><td>php bin/console doctrine:generate:entity</td></tr>
-        <tr><th align="right">s3dsc</th><td>php bin/console doctrine:schema:create</td></tr>
-        <tr><th align="right">s3dsu</th><td>php bin/console doctrine:schema:update</td></tr>
-        <tr><th align="right">s3dsv</th><td>php bin/console doctrine:schema:validate</td></tr>
-        <tr><th align="right">s3ddc</th><td>php bin/console doctrine:database:create</td></tr>
+        <tr><th align="right">s</th><td>php bin/console</td></tr>
+        <tr><th align="right">scc</th><td>php bin/console cache:clear</td></tr>
+        <tr><th align="right">sccp</th><td>php bin/console cache:clear --env=prod</td></tr>
+        <tr><th align="right">scct</th><td>php bin/console cache:clear --env=test</td></tr>
+        <tr><th align="right">sgb</th><td>php bin/console generate:bundle</td></tr>
+        <tr><th align="right">sgc</th><td>php bin/console generate:controller</td></tr>
+        <tr><th align="right">sdge</th><td>php bin/console doctrine:generate:entity</td></tr>
+        <tr><th align="right">sdsc</th><td>php bin/console doctrine:schema:create</td></tr>
+        <tr><th align="right">sdsu</th><td>php bin/console doctrine:schema:update</td></tr>
+        <tr><th align="right">sdsv</th><td>php bin/console doctrine:schema:validate</td></tr>
+        <tr><th align="right">sddc</th><td>php bin/console doctrine:database:create</td></tr>
     </tbody>
     <tr><td colspan="2"></td></tr>
     <thead><tr><th colspan="2" align="left">Other</th></tr></thead>
@@ -253,6 +255,11 @@ Remove `cli/php.ini` and `cgi/php.ini`, and symlink `apache2/php.ini` instead
 
 Set correct ACL for a Symfony app.
 Create `app/cache` and `app/log` if not exist, then set ACL to `www-data` and current user.
+
+#### symfo3-acl
+
+Set correct ACL for a Symfony 3 app.
+Create `var` if not exist, then set ACL to `www-data` and current user.
 
 [//]: # (/commands)
 
