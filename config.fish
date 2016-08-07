@@ -6,4 +6,4 @@ if [ -f /usr/share/autojump/autojump.fish ]
 	source /usr/share/autojump/autojump.fish
 end
 
-source abbreviations.fish
+source "$HOME/.config/fish/abbreviations.fish"
