@@ -19,6 +19,11 @@ abbr bi 'bower install --save'
 abbr bp 'bower prune'
 abbr bu 'bower update'
 
+# Brew Cask
+abbr bci 'brew cask install'
+abbr bcu 'brew cask uninstall'
+abbr bcs 'brew cask search'
+
 # Composer
 abbr c 'composer'
 abbr ci 'composer install'
@@ -38,6 +43,7 @@ abbr gcm 'git commit -m'
 abbr gcm!!! 'git add .; and git commit -m "Update"; and git push'
 abbr gco 'git checkout'
 abbr gcob 'git checkout -b'
+abbr gcod 'git checkout development'
 abbr gi 'gitignore'
 abbr gm 'git merge'
 abbr gpl 'git pull'
@@ -120,6 +126,15 @@ abbr sdsc 'php bin/console doctrine:schema:create'
 abbr sdsu 'php bin/console doctrine:schema:update'
 abbr sdsv 'php bin/console doctrine:schema:validate'
 abbr sddc 'php bin/console doctrine:database:create'
+
+# Vagrant
+abbr v 'vagrant'
+abbr vu 'vagrant up'
+abbr vs 'vagrant ssh'
+abbr vp 'vagrant provision'
+abbr vr 'vagrant reload'
+abbr vrp 'vagrant reload --provision'
+abbr vh 'vagrant halt'
 
 # Other
 abbr pg 'pgrep -l'
